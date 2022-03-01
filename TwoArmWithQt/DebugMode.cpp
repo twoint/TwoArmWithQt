@@ -15,4 +15,3 @@ void DebugMode::on_btn_exit()
 	this->close();
 }
 
-//ตฺถþดฮgitฒโสิ
