@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>.\chai3d3.2.0\src;.\chai3d3.2.0\external\Eigen;.\chai3d3.2.0\external\glew\include;.\chai3d3.2.0\extras\freeglut\include;.\chai3d3.2.0\extras\GLFW\include;\osapi;.\v-rep\remoteApi;.\v-rep\include;.\v-rep\common;.\Head_File;.\Head_File\SerialPort;.\Head_File\TcpSocket;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_MSVC;_CRT_SECURE_NO_WARNINGS;NDEBUG;NON_MATLAB_PARSING;MAX_EXT_API_CONNECTIONS=255zasda;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>.\chai3d3.2.0\lib\$(Configuration)\$(Platform);.\chai3d3.2.0\extras\GLFW\lib\$(Configuration)\$(Platform);.\v-rep;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>glfw.lib;OpenGL32.lib;glu32.lib;chai3d.lib;remoteApi.lib;ws2_32.lib;opencv_calib3d320d.lib;
+opencv_core320d.lib;opencv_features2d320d.lib;
+opencv_flann320d.lib;
+opencv_highgui320d.lib;opencv_imgcodecs320d.lib;
+opencv_imgproc320d.lib;opencv_ml320d.lib;
+opencv_objdetect320d.lib;
+opencv_photo320d.lib;opencv_shape320d.lib;
+opencv_stitching320d.lib;opencv_superres320d.lib;
+opencv_video320d.lib;opencv_videoio320d.lib;opencv_videostab320d.lib;opencv_calib3d320.lib;
+opencv_core320.lib;opencv_features2d320.lib;opencv_flann320.lib;opencv_highgui320.lib;opencv_imgcodecs320.lib;opencv_imgproc320.lib;
+opencv_ml320.lib;opencv_objdetect320.lib;opencv_photo320.lib;opencv_shape320.lib;opencv_stitching320.lib;
+opencv_superres320.lib;opencv_video320.lib;
+opencv_videoio320.lib;opencv_videostab320.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>
