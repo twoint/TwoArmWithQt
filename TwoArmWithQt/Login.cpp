@@ -66,3 +66,5 @@ void Login::on_btn_login()
 		this->close();
 	}
 }
+
+//ตฺถþดฮgitฒโสิ
