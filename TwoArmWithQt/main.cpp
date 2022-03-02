@@ -32,7 +32,6 @@ int main(int argc, char *argv[])
 	ToolConnectCom.OpenCom("\\\\.\\COM16", 19200, 0, 8, 1);//打开工具控制串口
 	Robot.StartUp();//启动其它线程
 
-
 	login->show();
 	return a.exec();
 }
