@@ -5,10 +5,10 @@
 #include"ServeMode.h"
 #include <QtWidgets/QApplication>
 
-//¿ØÖÆÏà¹ØÍ·ÎÄ¼ş
+//æ§åˆ¶ç›¸å…³å¤´æ–‡ä»¶
 #include"ToolConnect.h"
 #include"RobotArm.h"
-#include <conio.h>//°´¼ü´¥·¢Í·ÎÄ¼ş
+#include <conio.h>//æŒ‰é”®è§¦å‘å¤´æ–‡ä»¶
 #include "rotation.h"
 
 Login* login;
@@ -29,13 +29,14 @@ int main(int argc, char *argv[])
 
 	RobotArm Robot;
 	ToolConnect ToolConnectCom;
-	ToolConnectCom.OpenCom("\\\\.\\COM16", 19200, 0, 8, 1);//´ò¿ª¹¤¾ß¿ØÖÆ´®¿Ú
-	Robot.StartUp();//Æô¶¯ÆäËüÏß³Ì
+	ToolConnectCom.OpenCom("\\\\.\\COM16", 19200, 0, 8, 1);//æ‰“å¼€å·¥å…·æ§åˆ¶ä¸²å£
+	Robot.StartUp();//å¯åŠ¨å…¶å®ƒçº¿ç¨‹
 
 
 	login->show();
 	return a.exec();
 }
 
-//ÍÆËÍ²âÊÔ
-//·ÖÖ§¹ÜÀí
+//æ¨é€æµ‹è¯•
+//åˆ†æ”¯ç®¡ç†
+//æå–æµ‹è¯•
