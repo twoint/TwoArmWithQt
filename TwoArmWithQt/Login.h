@@ -30,6 +30,4 @@ private slots:
 	void on_btn_exit();//退出按钮操作	
 	void on_btn_minimized();//最小化按钮操作
 	void on_btn_login();//登录按钮操作
-
-
 };

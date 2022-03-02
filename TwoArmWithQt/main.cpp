@@ -35,7 +35,6 @@ int main(int argc, char *argv[])
 
 	login->show();
 	return a.exec();
-}
+} 
 
-//推送测试
-//分支管理
+
