@@ -1,4 +1,11 @@
 #include "ModeSelect.h"
+#include"DebugMode.h"
+#include"WorkMode.h"
+#include"ServeMode.h"
+
+extern DebugMode* debugmode;
+extern WorkMode* workmode;
+extern ServeMode* servemode;
 
 ModeSelect::ModeSelect(QWidget *parent)
 	: QWidget(parent)
@@ -26,17 +33,17 @@ void ModeSelect::on_btn_confirm()
 	switch (number)
 	{
 	case 0:
-		debugmode = new DebugMode(0);
+		//debugmode = new DebugMode(0);
 		debugmode->show();
 		this->close();
 		break;
 	case 1:
-		workmode = new WorkMode(0);
+		//workmode = new WorkMode(0);
 		workmode->show();
 		this->close();
 		break;
 	case 2:
-		servemode = new ServeMode(0);
+		//servemode = new ServeMode(0);
 		servemode->show();
 		this->close();
 		break;

@@ -23,6 +23,10 @@ QFrame{
 border:sold 10px rgba(0,0,0);
 background-image:url(./picture/debug_mode/背景.jpg);
 }
+QPlainTextEdit{
+background:rgba(85,170,255,200);
+
+}
 QLineEdit{
 color:#8d98a1;
 background-color:#405361;
@@ -88,6 +92,16 @@ font-size:30px;
     </property>
     <property name="text">
      <string>退出</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>250</y>
+      <width>571</width>
+      <height>371</height>
+     </rect>
     </property>
    </widget>
   </widget>

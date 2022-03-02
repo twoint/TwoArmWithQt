@@ -1,4 +1,8 @@
 #include "DebugMode.h"
+#include"ModeSelect.h"
+
+extern ModeSelect* modeselect;
+
 
 DebugMode::DebugMode(QWidget *parent)
 	: QWidget(parent)
@@ -12,6 +16,13 @@ DebugMode::DebugMode(QWidget *parent)
 
 void DebugMode::on_btn_exit()
 {
+	modeselect->show();
 	this->close();
 }
+
+void DebugMode::ThreadShow(const QString & str)
+{
+	ui.plainTextEdit->insertPlainText(str);
+}
+
 

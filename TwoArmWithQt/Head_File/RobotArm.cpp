@@ -1,6 +1,8 @@
+#include"../DebugMode.h"
 #include "RobotArm.h"
-
 using namespace std;
+
+extern DebugMode* debugmode;
 
 RobotArm::RobotArm() {
 	this->m_handle1 = NULL;
@@ -43,7 +45,7 @@ void RobotArm::Set(int FlagRobot, int func, float* buf, int velA, int vel, bool 
 DWORD WINAPI KebaRecvThread(LPVOID lpParam)
 {
 	RobotArm* pR = (RobotArm*)lpParam;
-	
+	//debugmode->ThreadShow("kebakeba");
 	while (true) {
 		pR->LeftInf.Connect = pR->m_isSocketFlag;
 		if (pR->m_isSocketFlag) {
@@ -56,6 +58,7 @@ DWORD WINAPI KebaRecvThread(LPVOID lpParam)
 				pR->LeftInf.TCP[i] = pR->tcp[i];
 			}
 		}
+
 	}
 
 	return 0;
@@ -65,7 +68,7 @@ DWORD WINAPI KebaRecvThread(LPVOID lpParam)
 DWORD WINAPI HydraulicArmRecvThread(LPVOID lpParam)
 {
 	RobotArm* pR = (RobotArm*)lpParam;
-	
+	//debugmode->ThreadShow("hyhy");
 	while (true) {
 		pR->RightInf.Connect = pR->IsSerialFlag;
 		if (pR->IsSerialFlag) {
@@ -84,7 +87,8 @@ DWORD WINAPI HydraulicArmRecvThread(LPVOID lpParam)
 //获取Touch信息
 DWORD WINAPI TouchThread(LPVOID lpParam) {
 	RobotArm* pR = (RobotArm*)lpParam;
-	
+	//debugmode->ThreadShow("touchtouch");
+
 	pR->CreateDevice();
 
 	// simulation in now running
@@ -166,7 +170,8 @@ DWORD WINAPI TouchThread(LPVOID lpParam) {
 //获取Vrep信息
 DWORD WINAPI VrepThread(LPVOID lpParam) {
 	RobotArm* pR = (RobotArm*)lpParam;
-	
+	debugmode->ThreadShow("vrepvrep");
+
 	while (!pR->Open_GetHandle("Vision_sensor", "UR10Left_joint", "UR10Right_joint", "UR10Left_tip", "UR10Left_target", "ControlDummyLeft", "UR10Right_tip", "UR10Right_target", "ControlDummyRight"));
 
 	while (true) {
