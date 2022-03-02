@@ -61,7 +61,7 @@ QLabel{
 background:rgba(85,170,255,0);
 color:black;
 font-style:MingLiU-ExtB;
-font-size:30px;
+font-size:25px;
 }
 
 </string>
@@ -97,12 +97,103 @@ font-size:30px;
    <widget class="QPlainTextEdit" name="plainTextEdit">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>250</y>
+      <x>1330</x>
+      <y>650</y>
       <width>571</width>
       <height>371</height>
      </rect>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="ToolGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>110</y>
+      <width>531</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>工具控制</string>
+    </property>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>121</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>引线抓手</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_lead_gripper_on">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>40</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>开</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_lead_gripper_off">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>40</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>关</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>避雷器抓手</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_arrester_grab_on">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>80</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>开</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_arrester_grab_off">
+     <property name="geometry">
+      <rect>
+       <x>280</x>
+       <y>80</y>
+       <width>93</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>关</string>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>

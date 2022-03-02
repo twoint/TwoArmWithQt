@@ -17,6 +17,9 @@ DebugMode* debugmode;
 WorkMode* workmode;
 ServeMode* servemode;
 
+RobotArm Robot;
+ToolConnect ToolConnectCom;
+
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
@@ -27,9 +30,7 @@ int main(int argc, char *argv[])
 	workmode = new WorkMode(0);
 	servemode = new ServeMode(0);
 
-	RobotArm Robot;
-	ToolConnect ToolConnectCom;
-	ToolConnectCom.OpenCom("\\\\.\\COM16", 19200, 0, 8, 1);//打开工具控制串口
+	ToolConnectCom.OpenCom("COM1", 19200, 0, 8, 1);//打开工具控制串口
 	Robot.StartUp();//启动其它线程
 
 	login->show();
