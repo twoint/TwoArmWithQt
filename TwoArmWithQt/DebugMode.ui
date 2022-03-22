@@ -195,6 +195,45 @@ font-size:25px;
      </property>
     </widget>
    </widget>
+   <widget class="QLabel" name="label_vrep_show">
+    <property name="geometry">
+     <rect>
+      <x>1180</x>
+      <y>120</y>
+      <width>591</width>
+      <height>281</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>vrep显示</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_vrep_open">
+    <property name="geometry">
+     <rect>
+      <x>1220</x>
+      <y>560</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>vrep打开</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_vrep_close">
+    <property name="geometry">
+     <rect>
+      <x>1510</x>
+      <y>560</y>
+      <width>131</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>vrep关闭</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

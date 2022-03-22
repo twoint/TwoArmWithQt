@@ -4,6 +4,7 @@
 #include <stdlib.h> 
 #include <iostream> 
 #include <windows.h>
+
 extern "C" {
 #include "extApi.h"
 }
@@ -15,7 +16,6 @@ extern "C" {
 class VrepConnect {
 public:
 	int clientID;//通讯客户端名称
-
 	bool FlagVrepImg;
 	simxUChar* vrep_image;
 	simxInt resolution[2] = { 0 };
@@ -64,11 +64,14 @@ public:
 	bool Open_GetHandle(const char* VisionSensor, const char* RobotLeftJoint,const char* RobotRightJoint,
 		const char* RobotLeftTip,const char* RobotLeftTarget, const char* RobotLeftDummyPR, 
 		const char* RobotRightTip,const char* RobotRightTarget, const char* RobotRightDummyPR,
-		int port = V_REP_PORT,const char* address = V_REP_ADDRESS){
+		int port = V_REP_PORT,const char* address = V_REP_ADDRESS)
+	{
 		simxFinish(-1); // just in case, close all opened connections关闭所有v-rep通讯
 		this->clientID = simxStart(address, port, true, true, -50000, 5);
-		if (this->clientID == -1) return false;
+		if (this->clientID == -1)
+			return false;
 		simxGetObjectHandle(this->clientID, VisionSensor, &this->Vision_sensor, simx_opmode_oneshot_wait);
+
 		for (int i = 0; i < 6; i++)//对机械臂关节获取句柄
 		{
 			std::string handleLeft = RobotLeftJoint + std::to_string(i + 1);

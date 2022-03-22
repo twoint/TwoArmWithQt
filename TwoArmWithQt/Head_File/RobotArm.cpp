@@ -1,5 +1,6 @@
 #include"../DebugMode.h"
 #include "RobotArm.h"
+#include"../DebugPrintf.h"
 using namespace std;
 
 extern DebugMode* debugmode;
@@ -86,6 +87,7 @@ DWORD WINAPI HydraulicArmRecvThread(LPVOID lpParam)
 
 //获取Touch信息
 DWORD WINAPI TouchThread(LPVOID lpParam) {
+
 	RobotArm* pR = (RobotArm*)lpParam;
 	//debugmode->ThreadShow("touchtouch");
 
@@ -189,6 +191,7 @@ DWORD WINAPI VrepThread(LPVOID lpParam) {
 
 //启动线程函数
 void RobotArm::StartUp() {
+	//DP0("@@@@@@@@@@----------startup开始执行---------@@@@@@@@@@@@@\n");
 	this->m_handle1 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(KebaRecvThread), this, 0, 0);
 	this->m_handle2 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(HydraulicArmRecvThread), this, 0, 0);
 	this->m_handle3 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(TouchThread), this, 0, 0);

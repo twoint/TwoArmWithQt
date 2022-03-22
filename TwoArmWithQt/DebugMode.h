@@ -1,6 +1,8 @@
 #pragma once
 #include <qwidget.h>
 #include"ui_DebugMode.h"
+#include <QTimer>
+
 
 class DebugMode :
 	public QWidget
@@ -13,6 +15,8 @@ public:
 
 private:
 	Ui::DebugModeClass ui;
+	QTimer *timer;//vrep图像刷新
+
 
 
 private slots:
@@ -21,7 +25,9 @@ private slots:
 	void on_btn_arrester_grab_on();//避雷器抓手开
 	void on_btn_arrester_grab_off();//避雷器抓手关
 
+	void importFrame();//vrep图像刷新
+	void on_btn_vrep_open();//打开vrep图像
+	void on_btn_vrep_close();//关闭vrep图像
 
-	
 	void on_btn_exit();
 };

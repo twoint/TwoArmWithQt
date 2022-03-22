@@ -112,6 +112,7 @@
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
     <QtMoc Include="DebugMode.h" />
+    <ClInclude Include="DebugPrintf.h" />
     <ClInclude Include="Head_File\AutoWork.h" />
     <ClInclude Include="Head_File\cvTest.h" />
     <ClInclude Include="Head_File\RobotArm.h" />

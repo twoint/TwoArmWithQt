@@ -135,6 +135,9 @@
     <ClInclude Include="Head_File\rotation.h">
       <Filter>头文件\其它</Filter>
     </ClInclude>
+    <ClInclude Include="DebugPrintf.h">
+      <Filter>头文件\其它</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="DebugMode.ui">
