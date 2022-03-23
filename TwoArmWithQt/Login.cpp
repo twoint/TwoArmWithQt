@@ -4,8 +4,8 @@ Login::Login(QWidget *parent)
     : QWidget(parent)
 {
     ui.setupUi(this);
-	setWindowFlags(Qt::FramelessWindowHint | windowFlags());			//去窗口边框
-	setAttribute(Qt::WA_TranslucentBackground);							//把窗口背景设置为透明
+	//setWindowFlags(Qt::FramelessWindowHint | windowFlags());			//去窗口边框
+	//setAttribute(Qt::WA_TranslucentBackground);							//把窗口背景设置为透明
 	connect(ui.btn_exit, SIGNAL(clicked()), this, SLOT(on_btn_exit()));
 	connect(ui.btn_minimized, SIGNAL(clicked()), this, SLOT(on_btn_exit()));
 	connect(ui.btn_login, SIGNAL(clicked()), this, SLOT(on_btn_login()));

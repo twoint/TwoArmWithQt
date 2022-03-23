@@ -12,8 +12,8 @@ ModeSelect::ModeSelect(QWidget *parent)
 {
 	ui.setupUi(this);
 
-	setWindowFlags(Qt::FramelessWindowHint | windowFlags());			//去窗口边框
-	setAttribute(Qt::WA_TranslucentBackground);							//把窗口背景设置为透明
+	//setWindowFlags(Qt::FramelessWindowHint | windowFlags());			//去窗口边框
+	//setAttribute(Qt::WA_TranslucentBackground);							//把窗口背景设置为透明
 
 	//将3个radio button设置为一组，为读取选中值做准备
 	qButtonGroup = new QButtonGroup();

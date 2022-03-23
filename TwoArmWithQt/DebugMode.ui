@@ -207,6 +207,9 @@ font-size:25px;
     <property name="text">
      <string>vrep显示</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
    </widget>
    <widget class="QPushButton" name="btn_vrep_open">
     <property name="geometry">
@@ -232,6 +235,48 @@ font-size:25px;
     </property>
     <property name="text">
      <string>vrep关闭</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_camera_show">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>510</y>
+      <width>651</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>摄像头显示</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_camera_open">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>970</y>
+      <width>120</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>打开相机</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_camera_close">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>970</y>
+      <width>120</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>关闭相机</string>
     </property>
    </widget>
   </widget>

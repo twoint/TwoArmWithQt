@@ -22,6 +22,8 @@ ToolConnect ToolConnectCom;
 
 int main(int argc, char *argv[])
 {
+	//if (QT_VERSION >= QT_VERSION_CHECK(5, 6, 0))//解决屏幕高DPI问题
+	//	QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 	QApplication a(argc, argv);
 
 	login = new Login(0);

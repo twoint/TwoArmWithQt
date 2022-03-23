@@ -9,20 +9,16 @@ extern ModeSelect* modeselect;
 extern ToolConnect ToolConnectCom;
 extern RobotArm Robot;
 
-/*****打开vrep图像相关文件******/
-#include <opencv2/core/core.hpp>
-#include <opencv2/highgui/highgui.hpp>
-#include <opencv2/imgproc/imgproc.hpp>
-/*******************************/
 
 
 DebugMode::DebugMode(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	setWindowFlags(Qt::FramelessWindowHint | windowFlags());			//去窗口边框
-	setAttribute(Qt::WA_TranslucentBackground);							//把窗口背景设置为透明
-	timer = new QTimer(this);											//vrep图像刷新定时器
+	//setWindowFlags(Qt::FramelessWindowHint | windowFlags());			//去窗口边框
+	//setAttribute(Qt::WA_TranslucentBackground);							//把窗口背景设置为透明
+	vrepTimer = new QTimer(this);											//vrep图像刷新定时器
+	cameraTimer = new QTimer(this);											//camera图像刷新定时器
 
 
 	connect(ui.btn_exit, SIGNAL(clicked()), this, SLOT(on_btn_exit()));
@@ -31,9 +27,13 @@ DebugMode::DebugMode(QWidget *parent)
 	connect(ui.btn_arrester_grab_on, SIGNAL(clicked()), this, SLOT(on_btn_arrester_grab_on()));
 	connect(ui.btn_arrester_grab_off, SIGNAL(clicked()), this, SLOT(on_btn_arrester_grab_off()));
 
-	connect(timer, SIGNAL(timeout()), this, SLOT(importFrame()));//import frame when timeout
+	connect(vrepTimer, SIGNAL(timeout()), this, SLOT(importVrepFrame()));//import frame when timeout
 	connect(ui.btn_vrep_open, SIGNAL(clicked()), this, SLOT(on_btn_vrep_open()));
 	connect(ui.btn_vrep_close, SIGNAL(clicked()), this, SLOT(on_btn_vrep_close()));
+
+	connect(cameraTimer, SIGNAL(timeout()), this, SLOT(importCameraFrame()));//import frame when timeout
+	connect(ui.btn_camera_open, SIGNAL(clicked()), this, SLOT(on_btn_camera_open()));
+	connect(ui.btn_camera_close, SIGNAL(clicked()), this, SLOT(on_btn_camera_close()));
 }
 
 void DebugMode::on_btn_lead_gripper_on()
@@ -67,7 +67,7 @@ void DebugMode::ThreadShow(const QString & str)
 	ui.plainTextEdit->insertPlainText(str);
 }
 
-void DebugMode::importFrame()
+void DebugMode::importVrepFrame()
 {
 	cv::Mat channel(Robot.resolution[0], Robot.resolution[1], CV_8UC3, Robot.vrep_image);
 	cv::Mat channelFlip;
@@ -85,14 +85,36 @@ void DebugMode::importFrame()
 
 void DebugMode::on_btn_vrep_open()
 {
-	timer->start(33);
+	vrepTimer->start(33);
 	Robot.FlagVrepImg = true;
 }
 
 void DebugMode::on_btn_vrep_close()
 {
-	timer->stop();
+	vrepTimer->stop();
 
+}
+
+void DebugMode::importCameraFrame()
+{
+	capture >> frame;
+	cvtColor(frame, frame, CV_BGR2RGB);//only RGB of Qt
+	QImage srcQImage = QImage((uchar*)(frame.data), frame.cols, frame.rows, QImage::Format_RGB888);
+	ui.label_camera_show->setPixmap(QPixmap::fromImage(srcQImage));
+	ui.label_camera_show->resize(srcQImage.size());
+	ui.label_camera_show->show();
+}
+
+void DebugMode::on_btn_camera_open()
+{
+	capture.open(0);
+	cameraTimer->start(33);// Start timing, Signal out when timeout
+}
+
+void DebugMode::on_btn_camera_close()
+{
+	cameraTimer->stop();
+	capture.release();
 }
 
 
