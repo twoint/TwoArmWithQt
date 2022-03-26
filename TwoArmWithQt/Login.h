@@ -23,11 +23,13 @@ public:
 private:
 	Ui::LoginClass ui;//当前登录界面
 	QDomDocument mydoc;//xml文件
-	ModeSelect* modelSelect;//模式选择界面
+	//ModeSelect* modelSelect;//模式选择界面
 
+signals:
+	void pageNum(int n);
 
 private slots:
-	void on_btn_exit();//退出按钮操作	
-	void on_btn_minimized();//最小化按钮操作
+	//void on_btn_exit();//退出按钮操作	
+	//void on_btn_minimized();//最小化按钮操作
 	void on_btn_login();//登录按钮操作
 };

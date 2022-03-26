@@ -97,7 +97,9 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="PageContainer.cpp" />
     <ClCompile Include="WorkMode.cpp" />
+    <QtMoc Include="PageContainer.h" />
     <QtMoc Include="WorkMode.h" />
     <QtRcc Include="Login.qrc" />
     <QtUic Include="DebugMode.ui" />
@@ -129,6 +131,7 @@
     <ClCompile Include="ModeSelect.cpp" />
     <ClCompile Include="ServeMode.cpp" />
     <QtUic Include="ModeSelect.ui" />
+    <QtUic Include="PageContainer.ui" />
     <QtUic Include="ServeMode.ui" />
     <QtUic Include="WorkMode.ui" />
   </ItemGroup>

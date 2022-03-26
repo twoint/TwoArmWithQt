@@ -11,17 +11,17 @@ Login::Login(QWidget *parent)
 	connect(ui.btn_login, SIGNAL(clicked()), this, SLOT(on_btn_login()));
 }
 
-/************退出窗口********* ****/
-void Login::on_btn_exit()
-{
-	close();
-}
-
-/***********最小化窗口*************/
-void Login::on_btn_minimized()
-{
-	showMinimized();
-}
+///************退出窗口********* ****/
+//void Login::on_btn_exit()
+//{
+//	close();
+//}
+//
+///***********最小化窗口*************/
+//void Login::on_btn_minimized()
+//{
+//	showMinimized();
+//}
 
 /*************登录*********** *****/
 void Login::on_btn_login()
@@ -60,9 +60,10 @@ void Login::on_btn_login()
 			ui.lineEdit_password->setFocus();
 			return;
 		}
+		emit pageNum(1);
 
-		modelSelect = new ModeSelect(0);//登录成功后，显示modeSelect页面，此页面关闭
-		modelSelect->show();
-		this->close();
+		//modelSelect = new ModeSelect(0);//登录成功后，显示modeSelect页面，此页面关闭
+		//modelSelect->show();
+		//this->close();
 	}
 }

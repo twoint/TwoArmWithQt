@@ -100,6 +100,9 @@
     <ClCompile Include="Login.cpp">
       <Filter>源文件\UI</Filter>
     </ClCompile>
+    <ClCompile Include="PageContainer.cpp">
+      <Filter>源文件\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Head_File\RobotArm.h">
@@ -152,6 +155,9 @@
     <QtUic Include="WorkMode.ui">
       <Filter>Form</Filter>
     </QtUic>
+    <QtUic Include="PageContainer.ui">
+      <Filter>Form</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="DebugMode.h">
@@ -167,6 +173,9 @@
       <Filter>头文件\UI</Filter>
     </QtMoc>
     <QtMoc Include="Login.h">
+      <Filter>头文件\UI</Filter>
+    </QtMoc>
+    <QtMoc Include="PageContainer.h">
       <Filter>头文件\UI</Filter>
     </QtMoc>
   </ItemGroup>
