@@ -183,7 +183,7 @@ DWORD WINAPI VrepThread(LPVOID lpParam) {
 
 		}
 		//pR->SetMsg(pR->LeftInf.AngleRad, pR->RightInf.AngleRad);
-		Sleep(125);
+		Sleep(25);
 	}
 
 	return 0;

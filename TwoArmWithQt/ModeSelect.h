@@ -16,8 +16,12 @@ private:
 	QButtonGroup* qButtonGroup;
 	int number;//选中的模式  0：调试  1：作业   2：服务器
 
+signals:
+	void jumpPageTo(int n);
+
+
 private slots:
 	void on_btn_confirm();//确认按钮,进入相应模式
-	void on_btn_exit();//退出按钮
 
 };
+

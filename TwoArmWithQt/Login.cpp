@@ -4,24 +4,9 @@ Login::Login(QWidget *parent)
     : QWidget(parent)
 {
     ui.setupUi(this);
-	//setWindowFlags(Qt::FramelessWindowHint | windowFlags());			//去窗口边框
-	//setAttribute(Qt::WA_TranslucentBackground);							//把窗口背景设置为透明
-	connect(ui.btn_exit, SIGNAL(clicked()), this, SLOT(on_btn_exit()));
-	connect(ui.btn_minimized, SIGNAL(clicked()), this, SLOT(on_btn_exit()));
 	connect(ui.btn_login, SIGNAL(clicked()), this, SLOT(on_btn_login()));
 }
 
-///************退出窗口********* ****/
-//void Login::on_btn_exit()
-//{
-//	close();
-//}
-//
-///***********最小化窗口*************/
-//void Login::on_btn_minimized()
-//{
-//	showMinimized();
-//}
 
 /*************登录*********** *****/
 void Login::on_btn_login()
@@ -60,10 +45,8 @@ void Login::on_btn_login()
 			ui.lineEdit_password->setFocus();
 			return;
 		}
-		emit pageNum(1);
+		emit jumpPageTo(1);
 
-		//modelSelect = new ModeSelect(0);//登录成功后，显示modeSelect页面，此页面关闭
-		//modelSelect->show();
-		//this->close();
+
 	}
 }

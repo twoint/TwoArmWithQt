@@ -58,8 +58,8 @@ void DebugMode::on_btn_arrester_grab_off()
 
 void DebugMode::on_btn_exit()
 {
-	modeselect->show();
-	this->close();
+	emit jumpPageTo(1);
+
 }
 
 void DebugMode::ThreadShow(const QString & str)

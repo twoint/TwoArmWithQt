@@ -22,11 +22,11 @@ PageContainer::PageContainer(QWidget *parent)
 	//去除最大最小化按钮
 	setWindowFlags(Qt::Dialog);
 	//固定窗口大小为1500*900
-	setFixedSize(1920, 1080);
+	setFixedSize(1500, 900);
 
 	//初始化相关窗口
 	stackedWidget = new QStackedWidget(this);
-	stackedWidget->resize(1920, 1080);
+	stackedWidget->resize(1500, 900);
 
 	login = new Login(this);
 	modeselect = new ModeSelect(this);
@@ -42,7 +42,9 @@ PageContainer::PageContainer(QWidget *parent)
 	//调用当前窗口
 	stackedWidget->setCurrentIndex(0);
 
-	connect(login, SIGNAL(pageNum(int)), this, SLOT(changePage(int)));
+	connect(login, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
+	connect(modeselect, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
+	connect(debugmode, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
 
 }
 

@@ -26,8 +26,8 @@ private:
 	cv::VideoCapture capture;
 	cv::Mat frame;
 
-
-
+signals:
+	void jumpPageTo(int n);
 
 private slots:
 	void on_btn_lead_gripper_on();//引线抓手开
