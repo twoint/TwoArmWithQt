@@ -14,7 +14,7 @@
    <string>Login</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">alternate-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 0, 0, 255), stop:1 rgba(255, 255, 255, 255));</string>
+   <string notr="true"/>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">
@@ -26,7 +26,9 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">#frame{
+	background-color: rgb(255, 255, 255);
+}</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -83,6 +85,9 @@
        </property>
        <property name="text">
         <string>记住密码</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
        </property>
       </widget>
      </item>

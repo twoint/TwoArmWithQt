@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
 	QApplication a(argc, argv);
 
 	PageContainer *pagecontainer = new PageContainer(0);
+	//pagecontainer->setWindowTitle("配网带电作业机器人控制系统");
 
 	ToolConnectCom.OpenCom("COM1", 19200, 0, 8, 1);//打开工具控制串口
 	Robot.StartUp();//启动其它线程

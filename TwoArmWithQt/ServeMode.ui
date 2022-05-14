@@ -6,25 +6,82 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>975</width>
-    <height>635</height>
+    <width>1500</width>
+    <height>900</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QLabel" name="label">
+  <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>450</x>
-     <y>240</y>
-     <width>151</width>
-     <height>31</height>
+     <x>0</x>
+     <y>0</y>
+     <width>1500</width>
+     <height>900</height>
     </rect>
    </property>
-   <property name="text">
-    <string>服务器模式</string>
+   <property name="styleSheet">
+    <string notr="true">#frame{
+	background-color: rgb(255, 255, 255);
+}
+</string>
    </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>80</y>
+      <width>500</width>
+      <height>500</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image:url(./picture/serve_mode/404.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>580</y>
+      <width>391</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 25 24pt &quot;Adobe 宋体 Std L&quot;;</string>
+    </property>
+    <property name="text">
+     <string>功能正在开发中...</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>590</x>
+      <y>710</y>
+      <width>391</width>
+      <height>111</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 25 24pt &quot;Adobe 宋体 Std L&quot;;</string>
+    </property>
+    <property name="text">
+     <string>3秒后自动返回...</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>

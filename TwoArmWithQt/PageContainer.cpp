@@ -19,6 +19,7 @@ PageContainer::PageContainer(QWidget *parent)
 {
 	ui = new Ui::PageContainer();
 	ui->setupUi(this);
+	setWindowTitle("配网带电作业机器人控制系统");
 	//去除最大最小化按钮
 	setWindowFlags(Qt::Dialog);
 	//固定窗口大小为1500*900
@@ -45,7 +46,7 @@ PageContainer::PageContainer(QWidget *parent)
 	connect(login, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
 	connect(modeselect, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
 	connect(debugmode, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
-
+	connect(workmode, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
 }
 
 void PageContainer::changePage(int n)

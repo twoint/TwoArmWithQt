@@ -79,8 +79,6 @@ void DebugMode::importVrepFrame()
 	ui.label_vrep_show->setPixmap(QPixmap::fromImage(Qtemp));
 	ui.label_vrep_show->resize(Qtemp.size());
 	ui.label_vrep_show->show();
-
-
 }
 
 void DebugMode::on_btn_vrep_open()

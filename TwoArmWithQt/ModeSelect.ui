@@ -26,7 +26,10 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);</string>
+    <string notr="true">#frame{
+	background-color: rgb(255, 255, 255);	
+}
+</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -67,7 +70,7 @@ font: 16pt &quot;黑体&quot;;</string>
     </property>
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>630</x>
       <y>130</y>
       <width>220</width>
       <height>80</height>
@@ -94,13 +97,29 @@ color: rgb(51, 145, 196);</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QPushButton" name="btn_confirm">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>690</y>
+      <width>220</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="text">
+     <string>确认</string>
+    </property>
+   </widget>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>330</y>
-      <width>992</width>
-      <height>268</height>
+      <x>262</x>
+      <y>332</y>
+      <width>971</width>
+      <height>265</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -119,7 +138,7 @@ QRadioButton::indicator::unchecked {
 }
 /*单选框选中样式*/
 QRadioButton::indicator::checked { 
-	image: url(./picture/mode_select/调试模式_选中.png);
+	image: url(./picture/mode_select/选中.png);
 }</string>
          </property>
          <property name="text">
@@ -150,12 +169,9 @@ font: bold normal 40px &quot;Microsoft YaHei&quot;;
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>150</width>
+         <width>40</width>
          <height>20</height>
         </size>
        </property>
@@ -176,7 +192,7 @@ QRadioButton::indicator::unchecked {
 }
 /*单选框选中样式*/
 QRadioButton::indicator::checked { 
-	image: url(./picture/mode_select/作业模式_选中.png);
+	image: url(./picture/mode_select/选中.png);
 }</string>
          </property>
          <property name="text">
@@ -207,12 +223,9 @@ font: bold normal 40px &quot;Microsoft YaHei&quot;;
        <property name="orientation">
         <enum>Qt::Horizontal</enum>
        </property>
-       <property name="sizeType">
-        <enum>QSizePolicy::Fixed</enum>
-       </property>
        <property name="sizeHint" stdset="0">
         <size>
-         <width>150</width>
+         <width>40</width>
          <height>20</height>
         </size>
        </property>
@@ -233,7 +246,7 @@ QRadioButton::indicator::unchecked {
 }
 /*单选框选中样式*/
 QRadioButton::indicator::checked { 
-	image: url(./picture/mode_select/服务器模式_选中.png);
+	image: url(./picture/mode_select/选中.png);
 }</string>
          </property>
          <property name="text">
@@ -260,22 +273,6 @@ font: bold normal 40px &quot;Microsoft YaHei&quot;;
       </layout>
      </item>
     </layout>
-   </widget>
-   <widget class="QPushButton" name="btn_confirm">
-    <property name="geometry">
-     <rect>
-      <x>640</x>
-      <y>660</y>
-      <width>220</width>
-      <height>81</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true"/>
-    </property>
-    <property name="text">
-     <string>确认</string>
-    </property>
    </widget>
   </widget>
  </widget>

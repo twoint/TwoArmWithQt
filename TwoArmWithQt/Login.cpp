@@ -8,7 +8,7 @@ Login::Login(QWidget *parent)
 }
 
 
-/*************µÇÂ¼*********** *****/
+/*************µÇÂ¼****************/
 void Login::on_btn_login()
 {
 	QFile file("userlog.xml");
