@@ -66,20 +66,17 @@
      <string>功能正在开发中...</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_3">
+   <widget class="QPushButton" name="btn_exit">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>710</y>
-      <width>391</width>
-      <height>111</height>
+      <x>700</x>
+      <y>790</y>
+      <width>112</width>
+      <height>34</height>
      </rect>
     </property>
-    <property name="styleSheet">
-     <string notr="true">font: 25 24pt &quot;Adobe 宋体 Std L&quot;;</string>
-    </property>
     <property name="text">
-     <string>3秒后自动返回...</string>
+     <string>返回</string>
     </property>
    </widget>
   </widget>

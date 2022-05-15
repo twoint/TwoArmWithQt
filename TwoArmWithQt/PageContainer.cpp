@@ -47,6 +47,7 @@ PageContainer::PageContainer(QWidget *parent)
 	connect(modeselect, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
 	connect(debugmode, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
 	connect(workmode, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
+	connect(servemode, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
 }
 
 void PageContainer::changePage(int n)
