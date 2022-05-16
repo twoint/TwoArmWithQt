@@ -47,6 +47,15 @@ DebugMode::DebugMode(QWidget *parent)
 
 void DebugMode::on_btn_exit()
 {
+	//显示coppeliasim初始化图片
+	QImage image_coppeliasim_init;
+	image_coppeliasim_init.load(".\\picture\\debug_mode\\coppeliasim.png");
+	ui.label_vrep_show->setPixmap(QPixmap::fromImage(image_coppeliasim_init));
+	//显示相机初始化图片
+	QImage image;
+	image.load(".\\picture\\debug_mode\\camera.png");
+	ui.label_camera_show->setPixmap(QPixmap::fromImage(image));
+
 	vrepTimer->stop();
 	cameraTimer->stop();
 	capture.release();
@@ -78,7 +87,6 @@ void DebugMode::on_btn_arrester_grab_off()
 {
 	ToolConnectCom.command(2, 2, 0, 0);
 }
-
 
 
 /************************coppliasim控制******************************/
