@@ -35,6 +35,11 @@ void WorkMode::on_btn_exit()
 void WorkMode::on_btn_confirm()
 {
 	number = qButtonGroup->checkedId();
+	//解决按钮选中残留问题，将选中的按钮设置为未选中状态
+	qButtonGroup->setExclusive(false);
+	qButtonGroup->button(number)->setChecked(false);
+	qButtonGroup->setExclusive(true);
+
 	switch (number)
 	{
 	case 0:

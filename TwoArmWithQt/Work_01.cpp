@@ -23,11 +23,15 @@ Work_01::Work_01(QWidget *parent)
 	QImage image_camera_init;
 	image_camera_init.load(".\\picture\\debug_mode\\camera.png");
 	ui.label_camera_show->setPixmap(QPixmap::fromImage(image_camera_init));
+	ui.label_camera_show->setScaledContents(true);//图片缩放至整个屏幕
+	ui.label_camera_show->show();
 
 	//显示coppeliasim初始化图片
 	QImage image_coppeliasim_init;
 	image_coppeliasim_init.load(".\\picture\\debug_mode\\coppeliasim.png");
 	ui.label_vrep_show->setPixmap(QPixmap::fromImage(image_coppeliasim_init));
+	ui.label_vrep_show->setScaledContents(true);//图片缩放至整个屏幕
+	ui.label_vrep_show->show();
 
 	connect(ui.btn_exit, SIGNAL(clicked()), this, SLOT(on_btn_exit()));
 	connect(infoUpdateTimer, SIGNAL(timeout()), this, SLOT(infoUpdateFrame()));//import frame when timeout
@@ -51,6 +55,7 @@ void Work_01::on_btn_exit()
 	QImage image_coppeliasim_init;
 	image_coppeliasim_init.load(".\\picture\\debug_mode\\coppeliasim.png");
 	ui.label_vrep_show->setPixmap(QPixmap::fromImage(image_coppeliasim_init));
+
 	//显示相机初始化图片
 	QImage image;
 	image.load(".\\picture\\debug_mode\\camera.png");

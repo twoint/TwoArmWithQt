@@ -37,49 +37,22 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QLabel" name="label_4">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>1500</width>
-      <height>50</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>黑体</family>
-      <pointsize>16</pointsize>
-      <weight>50</weight>
-      <italic>false</italic>
-      <bold>false</bold>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(51, 145, 196);
-color: rgb(255, 255, 255);
-font: 16pt &quot;黑体&quot;;</string>
-    </property>
-    <property name="text">
-     <string>配网带电作业机器人控制系统</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_5">
     <property name="enabled">
      <bool>false</bool>
     </property>
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>130</y>
-      <width>220</width>
-      <height>80</height>
+      <x>560</x>
+      <y>40</y>
+      <width>381</width>
+      <height>81</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>黑体</family>
-      <pointsize>20</pointsize>
+      <pointsize>25</pointsize>
       <weight>50</weight>
       <italic>false</italic>
       <bold>false</bold>
@@ -87,11 +60,13 @@ font: 16pt &quot;黑体&quot;;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 20pt &quot;黑体&quot;;
-color: rgb(51, 145, 196);</string>
+     <string notr="true">font: 25pt &quot;黑体&quot;;
+color: rgb(255, 255, 255);
+background-color: rgb(0, 116, 174);
+border-radius: 15px;   </string>
     </property>
     <property name="text">
-     <string>模式选择</string>
+     <string>场景选择</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
@@ -100,8 +75,8 @@ color: rgb(51, 145, 196);</string>
    <widget class="QPushButton" name="btn_confirm">
     <property name="geometry">
      <rect>
-      <x>630</x>
-      <y>690</y>
+      <x>640</x>
+      <y>700</y>
       <width>220</width>
       <height>81</height>
      </rect>
@@ -116,10 +91,10 @@ color: rgb(51, 145, 196);</string>
    <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>262</x>
-      <y>332</y>
+      <x>270</x>
+      <y>260</y>
       <width>971</width>
-      <height>265</height>
+      <height>266</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="horizontalLayout">
@@ -127,6 +102,9 @@ color: rgb(51, 145, 196);</string>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
         <widget class="QRadioButton" name="radioButton_dubug_mode">
+         <property name="layoutDirection">
+          <enum>Qt::LeftToRight</enum>
+         </property>
          <property name="styleSheet">
           <string notr="true">QRadioButton::indicator { 
 	width: 200px;
@@ -134,7 +112,7 @@ color: rgb(51, 145, 196);</string>
 }
 /*单选框未选中样式*/
 QRadioButton::indicator::unchecked {
-	image: url(./picture/mode_select/调试模式.png);
+	image: url(./picture/mode_select/调试.png);
 }
 /*单选框选中样式*/
 QRadioButton::indicator::checked { 
@@ -150,12 +128,12 @@ QRadioButton::indicator::checked {
         <widget class="QLabel" name="label">
          <property name="styleSheet">
           <string notr="true">QLabel{
-color: #1296db;
-font: bold normal 40px &quot;Microsoft YaHei&quot;;
+	color: rgb(0, 0, 0);
+	font: 75 14pt &quot;微软雅黑&quot;;
 }</string>
          </property>
          <property name="text">
-          <string>调试模式</string>
+          <string>调试</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -188,7 +166,7 @@ font: bold normal 40px &quot;Microsoft YaHei&quot;;
 }
 /*单选框未选中样式*/
 QRadioButton::indicator::unchecked {
-	image: url(./picture/mode_select/作业模式.png);
+	image: url(./picture/mode_select/作业.png);
 }
 /*单选框选中样式*/
 QRadioButton::indicator::checked { 
@@ -204,12 +182,12 @@ QRadioButton::indicator::checked {
         <widget class="QLabel" name="label_2">
          <property name="styleSheet">
           <string notr="true">QLabel{
-color: #1296db;
-font: bold normal 40px &quot;Microsoft YaHei&quot;;
+	color: rgb(0, 0, 0);
+	font: 75 14pt &quot;微软雅黑&quot;;
 }</string>
          </property>
          <property name="text">
-          <string>作业模式</string>
+          <string>作业</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -242,7 +220,7 @@ font: bold normal 40px &quot;Microsoft YaHei&quot;;
 }
 /*单选框未选中样式*/
 QRadioButton::indicator::unchecked {
-	image: url(./picture/mode_select/服务器模式.png);
+	image: url(./picture/mode_select/远程.png);
 }
 /*单选框选中样式*/
 QRadioButton::indicator::checked { 
@@ -258,12 +236,12 @@ QRadioButton::indicator::checked {
         <widget class="QLabel" name="label_3">
          <property name="styleSheet">
           <string notr="true">QLabel{
-color: #1296db;
-font: bold normal 40px &quot;Microsoft YaHei&quot;;
+	color: rgb(0, 0, 0);
+	font: 75 14pt &quot;微软雅黑&quot;;
 }</string>
          </property>
          <property name="text">
-          <string>服务器模式</string>
+          <string>远程</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
