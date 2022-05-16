@@ -1,7 +1,6 @@
 #include "DebugMode.h"
 #include"ModeSelect.h"
 #include"ToolConnect.h"
-
 #include"RobotArm.h"
 #include"DebugPrintf.h"
 
@@ -15,11 +14,20 @@ DebugMode::DebugMode(QWidget *parent)
 	: QWidget(parent)
 {
 	ui.setupUi(this);
-	//setWindowFlags(Qt::FramelessWindowHint | windowFlags());			//去窗口边框
+	//setWindowFlags(Qt::FramelessWindowHint | windowFlags());				//去窗口边框
 	//setAttribute(Qt::WA_TranslucentBackground);							//把窗口背景设置为透明
 	vrepTimer = new QTimer(this);											//vrep图像刷新定时器
 	cameraTimer = new QTimer(this);											//camera图像刷新定时器
 
+	//显示相机初始化图片
+	QImage image_camera_init;
+	image_camera_init.load(".\\picture\\debug_mode\\camera.png");
+	ui.label_camera_show->setPixmap(QPixmap::fromImage(image_camera_init));
+	
+	//显示coppeliasim初始化图片
+	QImage image_coppeliasim_init;
+	image_coppeliasim_init.load(".\\picture\\debug_mode\\coppeliasim.png");
+	ui.label_vrep_show->setPixmap(QPixmap::fromImage(image_coppeliasim_init));
 
 	connect(ui.btn_exit, SIGNAL(clicked()), this, SLOT(on_btn_exit()));
 	connect(ui.btn_lead_gripper_on, SIGNAL(clicked()), this, SLOT(on_btn_lead_gripper_on()));
@@ -36,6 +44,21 @@ DebugMode::DebugMode(QWidget *parent)
 	connect(ui.btn_camera_close, SIGNAL(clicked()), this, SLOT(on_btn_camera_close()));
 }
 
+
+void DebugMode::on_btn_exit()
+{
+	vrepTimer->stop();
+	cameraTimer->stop();
+	capture.release();
+	emit jumpPageTo(1);
+}
+
+void DebugMode::ThreadShow(const QString & str)
+{
+	ui.plainTextEdit->insertPlainText(str);
+}
+
+/************************工具控制******************************/
 void DebugMode::on_btn_lead_gripper_on()
 {
 	ToolConnectCom.command(1, 1, 0, 0);
@@ -56,17 +79,9 @@ void DebugMode::on_btn_arrester_grab_off()
 	ToolConnectCom.command(2, 2, 0, 0);
 }
 
-void DebugMode::on_btn_exit()
-{
-	emit jumpPageTo(1);
 
-}
 
-void DebugMode::ThreadShow(const QString & str)
-{
-	ui.plainTextEdit->insertPlainText(str);
-}
-
+/************************coppliasim控制******************************/
 void DebugMode::importVrepFrame()
 {
 	cv::Mat channel(Robot.resolution[0], Robot.resolution[1], CV_8UC3, Robot.vrep_image);
@@ -89,10 +104,16 @@ void DebugMode::on_btn_vrep_open()
 
 void DebugMode::on_btn_vrep_close()
 {
+	//显示coppeliasim初始化图片
+	QImage image_coppeliasim_init;
+	image_coppeliasim_init.load(".\\picture\\debug_mode\\coppeliasim.png");
+	ui.label_vrep_show->setPixmap(QPixmap::fromImage(image_coppeliasim_init));
+
 	vrepTimer->stop();
 
 }
 
+/************************相机控制******************************/
 void DebugMode::importCameraFrame()
 {
 	capture >> frame;
@@ -111,6 +132,11 @@ void DebugMode::on_btn_camera_open()
 
 void DebugMode::on_btn_camera_close()
 {
+	//显示相机初始化图片
+	QImage image;
+	image.load(".\\picture\\debug_mode\\camera.png");
+	ui.label_camera_show->setPixmap(QPixmap::fromImage(image));
+
 	cameraTimer->stop();
 	capture.release();
 }

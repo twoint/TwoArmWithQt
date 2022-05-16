@@ -14,7 +14,7 @@ public:
 private:
 	Ui::ModeSelectClass ui;
 	QButtonGroup* qButtonGroup;
-	int number;//选中的模式  0：调试  1：作业   2：服务器
+	int number;//选中的场景
 
 signals:
 	void jumpPageTo(int n);

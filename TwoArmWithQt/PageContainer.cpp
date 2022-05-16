@@ -7,12 +7,14 @@
 #include"WorkMode.h"
 #include"ServeMode.h"
 
+#include"Work_01.h"
+
 Login* login;
 ModeSelect* modeselect;
 DebugMode* debugmode;
 WorkMode* workmode;
 ServeMode* servemode;
-
+Work_01* work_01;
 
 PageContainer::PageContainer(QWidget *parent)
 	: QWidget(parent)
@@ -34,12 +36,16 @@ PageContainer::PageContainer(QWidget *parent)
 	debugmode = new DebugMode(this);
 	workmode = new WorkMode(this);
 	servemode = new ServeMode(this);
+	work_01 = new Work_01(this);
+
 	//添加窗口进控件
 	stackedWidget->addWidget(login);
 	stackedWidget->addWidget(modeselect);
 	stackedWidget->addWidget(debugmode);
 	stackedWidget->addWidget(workmode);
 	stackedWidget->addWidget(servemode);
+	stackedWidget->addWidget(work_01);
+	
 	//调用当前窗口
 	stackedWidget->setCurrentIndex(0);
 
@@ -48,6 +54,8 @@ PageContainer::PageContainer(QWidget *parent)
 	connect(debugmode, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
 	connect(workmode, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
 	connect(servemode, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
+	connect(work_01, SIGNAL(jumpPageTo(int)), this, SLOT(changePage(int)));
+
 }
 
 void PageContainer::changePage(int n)

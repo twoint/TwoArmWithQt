@@ -99,6 +99,8 @@
   <ItemGroup>
     <ClCompile Include="PageContainer.cpp" />
     <ClCompile Include="WorkMode.cpp" />
+    <ClCompile Include="Work_01.cpp" />
+    <QtMoc Include="Work_01.h" />
     <QtMoc Include="PageContainer.h" />
     <QtMoc Include="WorkMode.h" />
     <QtRcc Include="Login.qrc" />
@@ -134,6 +136,7 @@
     <QtUic Include="PageContainer.ui" />
     <QtUic Include="ServeMode.ui" />
     <QtUic Include="WorkMode.ui" />
+    <QtUic Include="Work_01.ui" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

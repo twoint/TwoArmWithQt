@@ -20,4 +20,5 @@ private:
 
 private slots:
 	void on_btn_exit();
+	void on_btn_confirm();
 };

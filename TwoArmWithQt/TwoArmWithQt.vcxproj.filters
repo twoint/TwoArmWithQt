@@ -57,6 +57,15 @@
     <Filter Include="源文件\UI">
       <UniqueIdentifier>{36111742-b246-423c-83a5-42a9a1bc3916}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\UI\work">
+      <UniqueIdentifier>{e3843267-d20f-4def-aab0-3d282e627380}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\UI\work">
+      <UniqueIdentifier>{576c5a4f-40cd-4eee-8314-dfcd85f0e464}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Form\work">
+      <UniqueIdentifier>{d30a3a37-1f14-4a00-9d57-1692e87006c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Login.qrc">
@@ -102,6 +111,9 @@
     </ClCompile>
     <ClCompile Include="PageContainer.cpp">
       <Filter>源文件\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="Work_01.cpp">
+      <Filter>源文件\UI\work</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -158,6 +170,9 @@
     <QtUic Include="PageContainer.ui">
       <Filter>Form</Filter>
     </QtUic>
+    <QtUic Include="Work_01.ui">
+      <Filter>Form\work</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="DebugMode.h">
@@ -177,6 +192,9 @@
     </QtMoc>
     <QtMoc Include="PageContainer.h">
       <Filter>头文件\UI</Filter>
+    </QtMoc>
+    <QtMoc Include="Work_01.h">
+      <Filter>头文件\UI\work</Filter>
     </QtMoc>
   </ItemGroup>
 </Project>
