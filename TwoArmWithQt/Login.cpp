@@ -4,6 +4,13 @@ Login::Login(QWidget *parent)
     : QWidget(parent)
 {
     ui.setupUi(this);
+
+	//ÏÔÊ¾logo
+	QImage image_logo;
+	image_logo.load(".\\picture\\debug_mode\\coppeliasim.png");
+	image_logo.load(".\\picture\\login\\robot.png");
+	ui.label_logo->setPixmap(QPixmap::fromImage(image_logo));
+
 	connect(ui.btn_login, SIGNAL(clicked()), this, SLOT(on_btn_login()));
 }
 

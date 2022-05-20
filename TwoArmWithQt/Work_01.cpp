@@ -31,6 +31,7 @@ Work_01::Work_01(QWidget *parent)
 	image_camera_init.load(".\\picture\\debug_mode\\camera.png");
 	ui.label_camera_show->setPixmap(QPixmap::fromImage(image_camera_init));
 	ui.label_camera_show->setScaledContents(true);//图片缩放至整个屏幕
+	ui.label_camera_show->setStyleSheet("border-radius:20px;");
 	ui.label_camera_show->show();
 
 	//显示coppeliasim初始化图片
@@ -294,6 +295,7 @@ void Work_01::importCameraFrame()
 	QImage srcQImage = QImage((uchar*)(frame.data), frame.cols, frame.rows, QImage::Format_RGB888);
 	ui.label_camera_show->setPixmap(QPixmap::fromImage(srcQImage));
 	ui.label_camera_show->setScaledContents(true);//图片缩放至整个屏幕
+	ui.label_camera_show->setStyleSheet("border-radius:20px;");
 	//ui.label_camera_show->resize(srcQImage.size());
 	ui.label_camera_show->show();
 }
