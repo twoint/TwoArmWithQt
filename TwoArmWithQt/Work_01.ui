@@ -29,6 +29,7 @@
 
 
 }
+
 </string>
    </property>
    <property name="frameShape">
@@ -81,6 +82,9 @@ border-radius: 15px;   </string>
       <height>480</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="frameShape">
      <enum>QFrame::Box</enum>
     </property>
@@ -109,6 +113,9 @@ border-radius: 15px;   </string>
       <height>480</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
     <property name="frameShape">
      <enum>QFrame::Box</enum>
     </property>
@@ -133,7 +140,7 @@ border-radius: 15px;   </string>
      <rect>
       <x>10</x>
       <y>550</y>
-      <width>431</width>
+      <width>371</width>
       <height>341</height>
      </rect>
     </property>
@@ -150,7 +157,7 @@ border-radius: 15px;   </string>
       <rect>
        <x>10</x>
        <y>30</y>
-       <width>200</width>
+       <width>170</width>
        <height>30</height>
       </rect>
      </property>
@@ -171,9 +178,9 @@ background-color: rgb(255, 134, 78);</string>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>190</x>
        <y>30</y>
-       <width>200</width>
+       <width>170</width>
        <height>30</height>
       </rect>
      </property>
@@ -194,9 +201,9 @@ background-color: rgb(255, 134, 78);</string>
     <widget class="QLabel" name="label_left_connect">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>20</x>
        <y>70</y>
-       <width>200</width>
+       <width>150</width>
        <height>30</height>
       </rect>
      </property>
@@ -217,9 +224,9 @@ border-radius: 10px;
     <widget class="QLabel" name="label_right_connect">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>200</x>
        <y>70</y>
-       <width>200</width>
+       <width>150</width>
        <height>30</height>
       </rect>
      </property>
@@ -240,9 +247,9 @@ border-radius: 10px;
     <widget class="QLabel" name="label_left_break">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>20</x>
        <y>110</y>
-       <width>200</width>
+       <width>150</width>
        <height>30</height>
       </rect>
      </property>
@@ -263,9 +270,9 @@ border-radius: 10px;
     <widget class="QLabel" name="label_right_break">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>200</x>
        <y>110</y>
-       <width>200</width>
+       <width>150</width>
        <height>30</height>
       </rect>
      </property>
@@ -286,9 +293,9 @@ border-radius: 10px;
     <widget class="QLabel" name="label_left_script">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>20</x>
        <y>150</y>
-       <width>200</width>
+       <width>150</width>
        <height>30</height>
       </rect>
      </property>
@@ -309,9 +316,9 @@ border-radius: 10px;
     <widget class="QLabel" name="label_right_script">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>200</x>
        <y>150</y>
-       <width>200</width>
+       <width>150</width>
        <height>30</height>
       </rect>
      </property>
@@ -332,9 +339,9 @@ border-radius: 10px;
     <widget class="QLabel" name="label_left_sync">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>20</x>
        <y>190</y>
-       <width>200</width>
+       <width>150</width>
        <height>30</height>
       </rect>
      </property>
@@ -355,9 +362,9 @@ border-radius: 10px;
     <widget class="QLabel" name="label_right_sync">
      <property name="geometry">
       <rect>
-       <x>220</x>
+       <x>200</x>
        <y>190</y>
-       <width>200</width>
+       <width>150</width>
        <height>30</height>
       </rect>
      </property>
@@ -379,9 +386,9 @@ border-radius: 10px;
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>390</x>
       <y>550</y>
-      <width>291</width>
+      <width>351</width>
       <height>341</height>
      </rect>
     </property>
@@ -391,6 +398,19 @@ border-radius: 10px;
     <property name="title">
      <string>作业信息</string>
     </property>
+    <widget class="QPlainTextEdit" name="plainTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>351</width>
+       <height>301</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font: 75 8pt &quot;微软雅黑&quot;;</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QGroupBox" name="groupBox_3">
     <property name="geometry">
@@ -402,62 +422,461 @@ border-radius: 10px;
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 10pt &quot;黑体&quot;;</string>
+     <string notr="true">QWidget
+{
+	border:1px solid #242424;
+	border-radius:0px;
+	background-color: rgb(255, 255, 255);
+}
+
+QToolButton
+{
+	font: 75 8pt &quot;微软雅黑&quot;;
+	border-style:none;
+	border:1px solid #242424;
+	color:#DCDCDC;
+	padding:5px;
+	min-height:15px;
+	border-radius:15px;
+	background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #484848,stop:1 #383838);
+	
+	background-color: rgb(116, 116, 116);
+	
+
+	
+}
+
+QToolButton:hover
+{
+	background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #646464,stop:1 #525252);
+	
+	background-color: rgb(0, 133, 199);
+}
+
+QToolButton:pressed
+{
+	background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #484848,stop:1 #383838);
+}
+
+QToolButton::menu-indicator
+{
+	image:None;
+}
+
+QToolButton:checked
+{
+    background-color: qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #FFCC33, stop:1 #FFCC33);
+    color:#4D4D4D;
+	border-radius:4px;
+    border:1px solid #B8B6B6;
+}
+</string>
     </property>
     <property name="title">
      <string>作业步骤</string>
     </property>
+    <widget class="QStackedWidget" name="stackedWidget">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>30</y>
+       <width>601</width>
+       <height>311</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>黑体</family>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+border-radius:14px;</string>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="page">
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>131</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>左臂打开抱闸</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>10</y>
+         <width>131</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>左臂关闭抱闸</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="geometry">
+        <rect>
+         <x>290</x>
+         <y>10</y>
+         <width>131</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>左臂重启脚本</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>131</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>右臂映射</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_9">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>110</y>
+         <width>131</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>右臂初始点</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_6">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>60</y>
+         <width>201</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>停止机器人记录点</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="geometry">
+        <rect>
+         <x>430</x>
+         <y>10</y>
+         <width>131</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>左臂映射</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>110</y>
+         <width>131</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>左臂初始点</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>60</y>
+         <width>131</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>左臂抱闸点</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_2">
+      <widget class="QPushButton" name="pushButton_10">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>131</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>相机识别</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_11">
+       <property name="geometry">
+        <rect>
+         <x>150</x>
+         <y>10</y>
+         <width>131</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>雷达识别</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_3">
+      <widget class="QPushButton" name="pushButton_12">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>131</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>选择抓线点</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_13">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>10</y>
+         <width>131</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>去抓线</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_4">
+      <widget class="QLabel" name="label_7">
+       <property name="geometry">
+        <rect>
+         <x>160</x>
+         <y>140</y>
+         <width>99</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>穿线</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="page_5"/>
+    </widget>
+    <widget class="QWidget" name="layoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>122</width>
+       <height>291</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QToolButton" name="tb_init">
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>微软雅黑</family>
+          <pointsize>8</pointsize>
+          <weight>9</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 75 8pt &quot;微软雅黑&quot;;</string>
+        </property>
+        <property name="text">
+         <string>初始化</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>picture/work_mode/work_01/初始化.png</normaloff>picture/work_mode/work_01/初始化.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="tb_cv">
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>识别</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>picture/work_mode/work_01/识别.png</normaloff>picture/work_mode/work_01/识别.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="tb_grab">
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>抓线</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>picture/work_mode/work_01/抓线.png</normaloff>picture/work_mode/work_01/抓线.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="tb_punch">
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>穿线</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>picture/work_mode/work_01/穿线.png</normaloff>picture/work_mode/work_01/穿线.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QToolButton" name="tb_fire">
+        <property name="maximumSize">
+         <size>
+          <width>120</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>接火</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>picture/work_mode/work_01/接火.png</normaloff>picture/work_mode/work_01/接火.png</iconset>
+        </property>
+        <property name="iconSize">
+         <size>
+          <width>40</width>
+          <height>40</height>
+         </size>
+        </property>
+        <property name="toolButtonStyle">
+         <enum>Qt::ToolButtonTextBesideIcon</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </widget>
-   <widget class="QPushButton" name="btn_camera_open">
+   <widget class="QPushButton" name="btn_vrep_show_switch">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>500</y>
-      <width>100</width>
-      <height>30</height>
+      <x>770</x>
+      <y>80</y>
+      <width>701</width>
+      <height>441</height>
      </rect>
     </property>
     <property name="text">
-     <string>打开</string>
+     <string/>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="btn_camera_close">
+   <widget class="QPushButton" name="btn_camera_show_switch">
     <property name="geometry">
      <rect>
-      <x>640</x>
-      <y>500</y>
-      <width>100</width>
-      <height>30</height>
+      <x>30</x>
+      <y>80</y>
+      <width>701</width>
+      <height>441</height>
      </rect>
     </property>
     <property name="text">
-     <string>关闭</string>
+     <string/>
     </property>
-   </widget>
-   <widget class="QPushButton" name="btn_vrep_open">
-    <property name="geometry">
-     <rect>
-      <x>1270</x>
-      <y>500</y>
-      <width>100</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>打开</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_vrep_close">
-    <property name="geometry">
-     <rect>
-      <x>1380</x>
-      <y>500</y>
-      <width>100</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>关闭</string>
+    <property name="flat">
+     <bool>true</bool>
     </property>
    </widget>
   </widget>

@@ -44,6 +44,10 @@ private slots:
 	void on_btn_camera_close();//¹Ø±ÕÏà»úÍ¼Ïñ
 
 	void on_btn_exit();
+
+
+
+
 };
 
 

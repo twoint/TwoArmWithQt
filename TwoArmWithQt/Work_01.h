@@ -28,20 +28,36 @@ private:
 	cv::VideoCapture capture;
 	cv::Mat frame;
 
+	void signalSlotConnect();
+	void selectToolButton(QToolButton *pTlb);
+
+	bool vrep_show_flag = false;
+	bool camera_show_flag = false;
+
+
 signals:
 	void jumpPageTo(int n);
 
 private slots:
 	void importVrepFrame();//vrep图像刷新
-	void on_btn_vrep_open();//打开vrep图像
-	void on_btn_vrep_close();//关闭vrep图像
+	void on_btn_vrep_show_switch();
 
 	void importCameraFrame();//相机图像刷新
-	void on_btn_camera_open();//打开相机图像
-	void on_btn_camera_close();//关闭相机图像
+	void on_btn_camera_show_switch();
+
+	//作业步骤
+	void on_tb_init();
+	void on_tb_cv();
+	void on_tb_grab();
+	void on_tb_punch();
+	void on_tb_fire();
 
 	void infoUpdateFrame();
-
 	void on_btn_exit();
+
+
+	//测试
+	//左臂映射
+	void on_btn_4();
 
 };

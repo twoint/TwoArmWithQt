@@ -42,6 +42,8 @@ DebugMode::DebugMode(QWidget *parent)
 	connect(cameraTimer, SIGNAL(timeout()), this, SLOT(importCameraFrame()));//import frame when timeout
 	connect(ui.btn_camera_open, SIGNAL(clicked()), this, SLOT(on_btn_camera_open()));
 	connect(ui.btn_camera_close, SIGNAL(clicked()), this, SLOT(on_btn_camera_close()));
+
+
 }
 
 
@@ -61,6 +63,8 @@ void DebugMode::on_btn_exit()
 	capture.release();
 	emit jumpPageTo(1);
 }
+
+
 
 void DebugMode::ThreadShow(const QString & str)
 {

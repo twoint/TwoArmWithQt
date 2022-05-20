@@ -6,7 +6,6 @@
 #include"DebugMode.h"
 #include"WorkMode.h"
 #include"ServeMode.h"
-
 #include"Work_01.h"
 
 Login* login;
@@ -22,6 +21,7 @@ PageContainer::PageContainer(QWidget *parent)
 	ui = new Ui::PageContainer();
 	ui->setupUi(this);
 	setWindowTitle("配网带电作业机器人控制系统");
+	setWindowIcon(QIcon(".\\picture\\robot.ico"));
 	//去除最大最小化按钮
 	setWindowFlags(Qt::Dialog);
 	//固定窗口大小为1500*900

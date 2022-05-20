@@ -32,12 +32,12 @@
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="QtSettings">
     <QtInstall>5.12.9_msvc2017</QtInstall>
-    <QtModules>core;gui;widgets;xml</QtModules>
+    <QtModules>core;xml;gui;widgets;</QtModules>
     <QtBuildConfig>debug</QtBuildConfig>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'" Label="QtSettings">
     <QtInstall>5.12.9_msvc2017</QtInstall>
-    <QtModules>core;gui;widgets</QtModules>
+    <QtModules>core;xml;gui;widgets;</QtModules>
     <QtBuildConfig>release</QtBuildConfig>
   </PropertyGroup>
   <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
@@ -104,6 +104,7 @@
     <QtMoc Include="PageContainer.h" />
     <QtMoc Include="WorkMode.h" />
     <QtRcc Include="Login.qrc" />
+    <QtRcc Include="logo.qrc" />
     <QtUic Include="DebugMode.ui" />
     <QtUic Include="Login.ui" />
     <QtMoc Include="Login.h" />

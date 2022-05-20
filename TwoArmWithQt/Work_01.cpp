@@ -18,6 +18,13 @@ Work_01::Work_01(QWidget *parent)
 	infoUpdateTimer = new QTimer(this);										//传感器信息刷新定时器
 	infoUpdateTimer->start(33);
 
+	ui.tb_init->setCheckable(true);
+	ui.tb_cv->setCheckable(true);
+	ui.tb_grab->setCheckable(true);
+	ui.tb_punch->setCheckable(true);
+	ui.tb_fire->setCheckable(true);
+	ui.stackedWidget->setCurrentIndex(0);
+
 
 	//显示相机初始化图片
 	QImage image_camera_init;
@@ -33,20 +40,83 @@ Work_01::Work_01(QWidget *parent)
 	ui.label_vrep_show->setScaledContents(true);//图片缩放至整个屏幕
 	ui.label_vrep_show->show();
 
-	connect(ui.btn_exit, SIGNAL(clicked()), this, SLOT(on_btn_exit()));
-	connect(infoUpdateTimer, SIGNAL(timeout()), this, SLOT(infoUpdateFrame()));//import frame when timeout
-
-	connect(vrepTimer, SIGNAL(timeout()), this, SLOT(importVrepFrame()));//import frame when timeout
-	connect(ui.btn_vrep_open, SIGNAL(clicked()), this, SLOT(on_btn_vrep_open()));
-	connect(ui.btn_vrep_close, SIGNAL(clicked()), this, SLOT(on_btn_vrep_close()));
-
-	connect(cameraTimer, SIGNAL(timeout()), this, SLOT(importCameraFrame()));//import frame when timeout
-	connect(ui.btn_camera_open, SIGNAL(clicked()), this, SLOT(on_btn_camera_open()));
-	connect(ui.btn_camera_close, SIGNAL(clicked()), this, SLOT(on_btn_camera_close()));
+	signalSlotConnect();
 }
 
 Work_01::~Work_01()
 {
+}
+
+void Work_01::signalSlotConnect()
+{
+	//退出按钮
+	connect(ui.btn_exit, SIGNAL(clicked()), this, SLOT(on_btn_exit()));
+	//传感器信息更新
+	connect(infoUpdateTimer, SIGNAL(timeout()), this, SLOT(infoUpdateFrame()));//import frame when timeout
+	//vrep
+	connect(vrepTimer, SIGNAL(timeout()), this, SLOT(importVrepFrame()));//import frame when timeout
+	connect(ui.btn_vrep_show_switch, SIGNAL(clicked()), this, SLOT(on_btn_vrep_show_switch()));
+	//相机
+	connect(cameraTimer, SIGNAL(timeout()), this, SLOT(importCameraFrame()));//import frame when timeout
+	connect(ui.btn_camera_show_switch, SIGNAL(clicked()), this, SLOT(on_btn_camera_show_switch()));
+	//作业步骤
+	connect(ui.tb_init, SIGNAL(clicked()), this, SLOT(on_tb_init()));
+	connect(ui.tb_cv, SIGNAL(clicked()), this, SLOT(on_tb_cv()));
+	connect(ui.tb_grab, SIGNAL(clicked()), this, SLOT(on_tb_grab()));
+	connect(ui.tb_punch, SIGNAL(clicked()), this, SLOT(on_tb_punch()));
+	connect(ui.tb_fire, SIGNAL(clicked()), this, SLOT(on_tb_fire()));
+
+	connect(ui.pushButton_4, SIGNAL(clicked()), this, SLOT(on_btn_4()));
+}
+
+void Work_01::selectToolButton(QToolButton * pTlb)
+{
+	if (ui.tb_init == pTlb)
+	{
+		ui.stackedWidget->setCurrentIndex(0);
+		ui.tb_init->setChecked(true);
+		ui.tb_cv->setChecked(false);
+		ui.tb_grab->setChecked(false);
+		ui.tb_punch->setChecked(false);
+		ui.tb_fire->setChecked(false);
+	}
+	else if (ui.tb_cv == pTlb)
+	{
+		ui.stackedWidget->setCurrentIndex(1);
+		ui.tb_init->setChecked(false);
+		ui.tb_cv->setChecked(true);
+		ui.tb_grab->setChecked(false);
+		ui.tb_punch->setChecked(false);
+		ui.tb_fire->setChecked(false);
+	}
+	else if (ui.tb_grab == pTlb)
+	{
+		ui.stackedWidget->setCurrentIndex(2);
+		ui.tb_init->setChecked(false);
+		ui.tb_cv->setChecked(false);
+		ui.tb_grab->setChecked(true);
+		ui.tb_punch->setChecked(false);
+		ui.tb_fire->setChecked(false);
+	}
+	else if (ui.tb_punch == pTlb)
+	{
+		ui.stackedWidget->setCurrentIndex(3);
+		ui.tb_init->setChecked(false);
+		ui.tb_cv->setChecked(false);
+		ui.tb_grab->setChecked(false);
+		ui.tb_punch->setChecked(true);
+		ui.tb_fire->setChecked(false);
+	}
+	else if (ui.tb_fire == pTlb)
+	{
+		ui.stackedWidget->setCurrentIndex(4);
+		ui.tb_init->setChecked(false);
+		ui.tb_cv->setChecked(false);
+		ui.tb_grab->setChecked(false);
+		ui.tb_punch->setChecked(false);
+		ui.tb_fire->setChecked(true);
+	}
+
 }
 
 void Work_01::on_btn_exit()
@@ -65,6 +135,11 @@ void Work_01::on_btn_exit()
 	cameraTimer->stop();
 	capture.release();
 	emit jumpPageTo(3);
+}
+
+void Work_01::on_btn_4()
+{
+	Robot.LeftInf.Sync = !Robot.LeftInf.Sync;
 }
 
 void Work_01::infoUpdateFrame()
@@ -189,21 +264,26 @@ void Work_01::importVrepFrame()
 	ui.label_vrep_show->show();
 }
 
-void Work_01::on_btn_vrep_open()
+void Work_01::on_btn_vrep_show_switch()
 {
-	vrepTimer->start(33);
-	Robot.FlagVrepImg = true;
-}
+	vrep_show_flag = !vrep_show_flag;
+	if (vrep_show_flag)//打开
+	{
+		vrepTimer->start(33);
+		Robot.FlagVrepImg = true;
+		ui.plainTextEdit->appendPlainText("vrep已打开...");
 
-void Work_01::on_btn_vrep_close()
-{
-	//显示coppeliasim初始化图片
-	QImage image_coppeliasim_init;
-	image_coppeliasim_init.load(".\\picture\\debug_mode\\coppeliasim.png");
-	ui.label_vrep_show->setPixmap(QPixmap::fromImage(image_coppeliasim_init));
+	}
+	else//关闭
+	{
+		//显示coppeliasim初始化图片
+		QImage image_coppeliasim_init;
+		image_coppeliasim_init.load(".\\picture\\debug_mode\\coppeliasim.png");
+		ui.label_vrep_show->setPixmap(QPixmap::fromImage(image_coppeliasim_init));
+		vrepTimer->stop();
+		ui.plainTextEdit->appendPlainText("vrep已关闭...");
 
-	vrepTimer->stop();
-
+	}
 }
 
 /************************相机控制******************************/
@@ -218,21 +298,61 @@ void Work_01::importCameraFrame()
 	ui.label_camera_show->show();
 }
 
-void Work_01::on_btn_camera_open()
+void Work_01::on_btn_camera_show_switch()
 {
-	capture.open(0);
-	cameraTimer->start(33);// Start timing, Signal out when timeout
+	camera_show_flag = !camera_show_flag;
+	if (camera_show_flag)//打开
+	{
+		capture.open(0);
+		cameraTimer->start(33);// Start timing, Signal out when timeout
+		ui.plainTextEdit->appendPlainText("相机已打开...");
+
+	}
+	else//关闭
+	{
+		//显示相机初始化图片
+		QImage image;
+		image.load(".\\picture\\debug_mode\\camera.png");
+		ui.label_camera_show->setPixmap(QPixmap::fromImage(image));
+
+		cameraTimer->stop();
+		capture.release();
+		ui.plainTextEdit->appendPlainText("相机已关闭...");
+	}
 }
 
-void Work_01::on_btn_camera_close()
-{
-	//显示相机初始化图片
-	QImage image;
-	image.load(".\\picture\\debug_mode\\camera.png");
-	ui.label_camera_show->setPixmap(QPixmap::fromImage(image));
+/*************************作业步骤*****************************/
 
-	cameraTimer->stop();
-	capture.release();
+void Work_01::on_tb_init()
+{
+	ui.plainTextEdit->appendPlainText("进入初始化作业");
+	selectToolButton(ui.tb_init);
 }
+
+void Work_01::on_tb_cv()
+{
+	ui.plainTextEdit->appendPlainText("进入识别作业");
+	selectToolButton(ui.tb_cv);
+}
+
+void Work_01::on_tb_grab()
+{
+	ui.plainTextEdit->appendPlainText("进入抓线作业");
+	selectToolButton(ui.tb_grab);
+}
+
+void Work_01::on_tb_punch()
+{
+	ui.plainTextEdit->appendPlainText("进入穿线作业");
+	selectToolButton(ui.tb_punch);
+}
+
+void Work_01::on_tb_fire()
+{
+	ui.plainTextEdit->appendPlainText("进入接火作业");
+	selectToolButton(ui.tb_fire);
+}
+
+
 
 
