@@ -7,9 +7,21 @@ Login::Login(QWidget *parent)
 
 	//显示logo
 	QImage image_logo;
-	image_logo.load(".\\picture\\debug_mode\\coppeliasim.png");
 	image_logo.load(".\\picture\\login\\robot.png");
 	ui.label_logo->setPixmap(QPixmap::fromImage(image_logo));
+
+	//显示logo_state_grid
+	QImage image_logo_state_grid;
+	image_logo_state_grid.load(".\\picture\\login\\国家电网.png");
+	ui.label_state_grid->setPixmap(QPixmap::fromImage(image_logo_state_grid));
+
+	//显示logo_ustc
+	QImage image_logo_ustc;
+	image_logo_ustc.load(".\\picture\\login\\中国科学技术大学.png");
+	ui.label_logo_ustc->setPixmap(QPixmap::fromImage(image_logo_ustc));
+
+
+
 
 	connect(ui.btn_login, SIGNAL(clicked()), this, SLOT(on_btn_login()));
 }

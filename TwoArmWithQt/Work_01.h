@@ -3,6 +3,7 @@
 #include <QWidget>
 #include "ui_Work_01.h"
 #include <QTimer>
+#include<qpainter.h>
 
 
 /*****打开vrep图像相关文件******/
@@ -30,6 +31,7 @@ private:
 
 	void signalSlotConnect();
 	void selectToolButton(QToolButton *pTlb);
+	QPixmap getRoundRectPixmap(QPixmap srcPixMap, const QSize & size, int radius);//处理圆角图片
 
 	bool vrep_show_flag = false;
 	bool camera_show_flag = false;

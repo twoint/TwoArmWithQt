@@ -29,17 +29,16 @@ Work_01::Work_01(QWidget *parent)
 	//显示相机初始化图片
 	QImage image_camera_init;
 	image_camera_init.load(".\\picture\\debug_mode\\camera.png");
+	ui.label_camera_show->setStyleSheet("border-radius:20px;background-color: rgba(255, 255, 255, 0);");
 	ui.label_camera_show->setPixmap(QPixmap::fromImage(image_camera_init));
-	ui.label_camera_show->setScaledContents(true);//图片缩放至整个屏幕
-	ui.label_camera_show->setStyleSheet("border-radius:20px;");
-	ui.label_camera_show->show();
+	//ui.label_camera_show->setScaledContents(true);//图片缩放至整个屏幕
 
 	//显示coppeliasim初始化图片
 	QImage image_coppeliasim_init;
 	image_coppeliasim_init.load(".\\picture\\debug_mode\\coppeliasim.png");
+	ui.label_vrep_show->setStyleSheet("border-radius:20px;background-color: rgba(255, 255, 255, 0);");
 	ui.label_vrep_show->setPixmap(QPixmap::fromImage(image_coppeliasim_init));
-	ui.label_vrep_show->setScaledContents(true);//图片缩放至整个屏幕
-	ui.label_vrep_show->show();
+	//ui.label_vrep_show->setScaledContents(true);//图片缩放至整个屏幕
 
 	signalSlotConnect();
 }
@@ -120,17 +119,51 @@ void Work_01::selectToolButton(QToolButton * pTlb)
 
 }
 
+QPixmap Work_01::getRoundRectPixmap(QPixmap srcPixMap, const QSize & size, int radius)
+{
+	//不处理空数据或者错误数据
+	if (srcPixMap.isNull()) {
+		return srcPixMap;
+	}
+
+	//获取图片尺寸
+	int imageWidth = size.width();
+	int imageHeight = size.height();
+
+	//处理大尺寸的图片,保证图片显示区域完整
+	QPixmap newPixMap = srcPixMap.scaled(imageWidth, (imageHeight == 0 ? imageWidth : imageHeight), Qt::IgnoreAspectRatio, Qt::SmoothTransformation);
+
+	QPixmap destImage(imageWidth, imageHeight);
+	destImage.fill(Qt::transparent);
+	QPainter painter(&destImage);
+	// 抗锯齿
+	painter.setRenderHints(QPainter::Antialiasing, true);
+	// 图片平滑处理
+	painter.setRenderHints(QPainter::SmoothPixmapTransform, true);
+	// 将图片裁剪为圆角
+	QPainterPath path;
+	QRect rect(0, 0, imageWidth, imageHeight);
+	path.addRoundedRect(rect, radius, radius);
+	painter.setClipPath(path);
+	painter.drawPixmap(0, 0, imageWidth, imageHeight, newPixMap);
+	return destImage;
+}
+
 void Work_01::on_btn_exit()
 {
 	//显示coppeliasim初始化图片
 	QImage image_coppeliasim_init;
 	image_coppeliasim_init.load(".\\picture\\debug_mode\\coppeliasim.png");
+	ui.label_vrep_show->setStyleSheet("border-radius:20px;background-color: rgba(255, 255, 255, 0);");
+	ui.label_vrep_show->setScaledContents(false);
 	ui.label_vrep_show->setPixmap(QPixmap::fromImage(image_coppeliasim_init));
 
 	//显示相机初始化图片
-	QImage image;
-	image.load(".\\picture\\debug_mode\\camera.png");
-	ui.label_camera_show->setPixmap(QPixmap::fromImage(image));
+	QImage image_camera_init;
+	image_camera_init.load(".\\picture\\debug_mode\\camera.png");
+	ui.label_camera_show->setStyleSheet("border-radius:20px;background-color: rgba(255, 255, 255, 0);");
+	ui.label_camera_show->setScaledContents(false);
+	ui.label_camera_show->setPixmap(QPixmap::fromImage(image_camera_init));
 
 	vrepTimer->stop();
 	cameraTimer->stop();
@@ -259,10 +292,11 @@ void Work_01::importVrepFrame()
 	//读回来的图像数据时rgb通道分布的，而cvMat 默认bgr
 	cv::cvtColor(channelFlip, channelFlip, cv::COLOR_RGB2BGR);
 	QImage Qtemp = QImage((const unsigned char*)(channelFlip.data), channelFlip.cols, channelFlip.rows, channelFlip.step, QImage::Format_RGB888);
-	ui.label_vrep_show->setPixmap(QPixmap::fromImage(Qtemp));
+	ui.label_vrep_show->setPixmap(getRoundRectPixmap(QPixmap::fromImage(Qtemp), Qtemp.size(), 20));//显示圆角图片
+	//ui.label_vrep_show->setPixmap(QPixmap::fromImage(Qtemp));
+	ui.label_vrep_show->setStyleSheet("border-radius:20px;background-color: rgba(255, 255, 255, 0);");
 	ui.label_vrep_show->setScaledContents(true);//图片缩放至整个屏幕
 	//ui.label_vrep_show->resize(Qtemp.size());
-	ui.label_vrep_show->show();
 }
 
 void Work_01::on_btn_vrep_show_switch()
@@ -281,6 +315,8 @@ void Work_01::on_btn_vrep_show_switch()
 		QImage image_coppeliasim_init;
 		image_coppeliasim_init.load(".\\picture\\debug_mode\\coppeliasim.png");
 		ui.label_vrep_show->setPixmap(QPixmap::fromImage(image_coppeliasim_init));
+		ui.label_vrep_show->setScaledContents(false);//图片缩放至整个屏幕关闭
+		ui.label_vrep_show->setStyleSheet("border-radius:20px;background-color: rgba(255, 255, 255, 0);");
 		vrepTimer->stop();
 		ui.plainTextEdit->appendPlainText("vrep已关闭...");
 
@@ -293,11 +329,11 @@ void Work_01::importCameraFrame()
 	capture >> frame;
 	cvtColor(frame, frame, CV_BGR2RGB);//only RGB of Qt
 	QImage srcQImage = QImage((uchar*)(frame.data), frame.cols, frame.rows, QImage::Format_RGB888);
-	ui.label_camera_show->setPixmap(QPixmap::fromImage(srcQImage));
-	ui.label_camera_show->setScaledContents(true);//图片缩放至整个屏幕
+	ui.label_camera_show->setPixmap(getRoundRectPixmap(QPixmap::fromImage(srcQImage), srcQImage.size(), 20));//显示圆角图片
+	//ui.label_camera_show->setPixmap(QPixmap::fromImage(srcQImage));
 	ui.label_camera_show->setStyleSheet("border-radius:20px;");
+	ui.label_camera_show->setScaledContents(true);//图片缩放至整个屏幕
 	//ui.label_camera_show->resize(srcQImage.size());
-	ui.label_camera_show->show();
 }
 
 void Work_01::on_btn_camera_show_switch()
@@ -316,6 +352,8 @@ void Work_01::on_btn_camera_show_switch()
 		QImage image;
 		image.load(".\\picture\\debug_mode\\camera.png");
 		ui.label_camera_show->setPixmap(QPixmap::fromImage(image));
+		ui.label_camera_show->setStyleSheet("border-radius:20px;background-color: rgba(255, 255, 255, 0);");
+
 
 		cameraTimer->stop();
 		capture.release();
