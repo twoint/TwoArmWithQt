@@ -143,11 +143,12 @@ background-color: rgba(255, 255, 255, 0);</string>
       <item>
        <widget class="QLabel" name="label_2">
         <property name="styleSheet">
-         <string notr="true">font: 25 24pt &quot;Adobe 宋体 Std L&quot;;
-background-color: rgba(255, 255, 255, 0);</string>
+         <string notr="true">font: 20pt &quot;微软雅黑&quot;;
+background-color: rgba(255, 255, 255, 0);
+color: rgb(255, 255, 255);</string>
         </property>
         <property name="text">
-         <string>功能正在开发中...</string>
+         <string>请打开远程软件进行连接...</string>
         </property>
        </widget>
       </item>

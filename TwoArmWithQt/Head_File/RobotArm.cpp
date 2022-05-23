@@ -172,7 +172,6 @@ DWORD WINAPI TouchThread(LPVOID lpParam) {
 //获取Vrep信息
 DWORD WINAPI VrepThread(LPVOID lpParam) {
 	RobotArm* pR = (RobotArm*)lpParam;
-	debugmode->ThreadShow("vrepvrep");
 
 	while (!pR->Open_GetHandle("Vision_sensor", "UR10Left_joint", "UR10Right_joint", "UR10Left_tip", "UR10Left_target", "ControlDummyLeft", "UR10Right_tip", "UR10Right_target", "ControlDummyRight"));
 
