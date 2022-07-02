@@ -2,7 +2,7 @@
 #define _RobotArm_H
 
 #include <iostream>
-#include "KebaConnect.h"
+#include "KebaConnectLeft.h"
 #include "HydraulicArm.h"
 #include "TouchConnect.h"
 #include "VrepConnect.h"
@@ -13,7 +13,7 @@
 #define FactorPosition    1.0f
 #define FactorRotation    1.0f
 
-class RobotArm:public KebaConnect,public HydraulicArm,public TouchConnect,public VrepConnect,public KebaConnectRight
+class RobotArm:public KebaConnectLeft,public HydraulicArm,public TouchConnect,public VrepConnect,public KebaConnectRight
 {
 public:
 	struct RobotInf{
@@ -40,7 +40,7 @@ public:
 	void Set(int FlagRobot, int func, float* buf = NULL, int velA = 90, int vel = 500, bool FlagRad = true);
 
 	//友元线程函数，方便访问类内成员
-	friend DWORD WINAPI KebaRecvThread(LPVOID lpParam);
+	friend DWORD WINAPI KebaRecvLeftThread(LPVOID lpParam);
 	friend DWORD WINAPI KebaRecvRightThread(LPVOID lpParam);
 	//friend DWORD WINAPI HydraulicArmRecvThread(LPVOID lpParam);
 	friend DWORD WINAPI TouchThread(LPVOID lpParam);

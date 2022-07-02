@@ -20,8 +20,8 @@ RobotArm::~RobotArm() {};
 
 void RobotArm::Set(int FlagRobot, int func, float* buf, int velA, int vel, bool FlagRad) {
 	if (FlagRobot == LeftArm) {
-		if (func < PTP_TCP) this->SetMotion(func);
-		else this->SetMotion(func, buf, velA, vel, FlagRad);
+		if (func < PTP_TCP) this->SetMotionLeft(func);
+		else this->SetMotionLeft(func, buf, velA, vel, FlagRad);
 	}
 	else if (FlagRobot == RightArm) {
 		if (func < PTP_TCP) this->SetMotionRight(func);
@@ -31,20 +31,20 @@ void RobotArm::Set(int FlagRobot, int func, float* buf, int velA, int vel, bool 
 
 //获取keba控制器信息
 
-DWORD WINAPI KebaRecvThread(LPVOID lpParam)
+DWORD WINAPI KebaRecvLeftThread(LPVOID lpParam)
 {
 	RobotArm* pR = (RobotArm*)lpParam;
 	//debugmode->ThreadShow("kebakeba");
 	while (true) {
-		pR->LeftInf.Connect = pR->m_isSocketFlag;
-		if (pR->m_isSocketFlag) {
-			pR->KebaAnalyse();
-			pR->LeftInf.Brake = pR->enable;
-			pR->LeftInf.Script = pR->script;
+		pR->LeftInf.Connect = pR->m_isSocketFlag_left;
+		if (pR->m_isSocketFlag_left) {
+			pR->KebaAnalyseLeft();
+			pR->LeftInf.Brake = pR->enable_left;
+			pR->LeftInf.Script = pR->script_left;
 			for (int i = 0; i < 6; i++) {
-				pR->LeftInf.Angle[i] = pR->angle[i];
-				pR->LeftInf.AngleRad[i] = pR->RadAngle[i];
-				pR->LeftInf.TCP[i] = pR->tcp[i];
+				pR->LeftInf.Angle[i] = pR->angle_left[i];
+				pR->LeftInf.AngleRad[i] = pR->RadAngle_left[i];
+				pR->LeftInf.TCP[i] = pR->tcp_left[i];
 			}
 		}
 
@@ -201,7 +201,7 @@ DWORD WINAPI VrepThread(LPVOID lpParam) {
 //启动线程函数
 void RobotArm::StartUp() {
 	//DP0("@@@@@@@@@@----------startup开始执行---------@@@@@@@@@@@@@\n");
-	this->m_handle1 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(KebaRecvThread), this, 0, 0);
+	this->m_handle1 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(KebaRecvLeftThread), this, 0, 0);
 	//this->m_handle2 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(HydraulicArmRecvThread), this, 0, 0);
 	this->m_handle2 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(KebaRecvRightThread), this, 0, 0);
 	this->m_handle3 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(TouchThread), this, 0, 0);

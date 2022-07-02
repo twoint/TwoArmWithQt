@@ -113,7 +113,7 @@
     <ClCompile Include="Head_File\RobotArm.cpp" />
     <ClCompile Include="Head_File\SerialPort\HydraulicArm.cpp" />
     <ClCompile Include="Head_File\SerialPort\SerialPort.cpp" />
-    <ClCompile Include="Head_File\TcpSocket\TcpSocket.cpp" />
+    <ClCompile Include="Head_File\TcpSocket\TcpSocketLeft.cpp" />
     <ClCompile Include="Head_File\TouchConnect.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="main.cpp" />
@@ -128,8 +128,8 @@
     <ClInclude Include="Head_File\SerialPort\SerialPort.h" />
     <ClInclude Include="Head_File\SerialPort\ToolConnect.h" />
     <ClInclude Include="Head_File\TcpSocketRight.h" />
-    <ClInclude Include="Head_File\TcpSocket\KebaConnect.h" />
-    <ClInclude Include="Head_File\TcpSocket\TcpSocket.h" />
+    <ClInclude Include="Head_File\TcpSocket\KebaConnectLeft.h" />
+    <ClInclude Include="Head_File\TcpSocket\TcpSocketLeft.h" />
     <ClInclude Include="Head_File\TouchConnect.h" />
     <ClInclude Include="Head_File\VrepConnect.h" />
     <QtMoc Include="ModeSelect.h" />

@@ -91,9 +91,6 @@
     <ClCompile Include="Head_File\SerialPort\SerialPort.cpp">
       <Filter>源文件\串口通信</Filter>
     </ClCompile>
-    <ClCompile Include="Head_File\TcpSocket\TcpSocket.cpp">
-      <Filter>源文件\TCP通信</Filter>
-    </ClCompile>
     <ClCompile Include="Head_File\TouchConnect.cpp">
       <Filter>源文件\Touch</Filter>
     </ClCompile>
@@ -121,6 +118,9 @@
     <ClCompile Include="Head_File\TcpSocketRight.cpp">
       <Filter>源文件\TCP通信</Filter>
     </ClCompile>
+    <ClCompile Include="Head_File\TcpSocket\TcpSocketLeft.cpp">
+      <Filter>源文件\TCP通信</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Head_File\RobotArm.h">
@@ -134,12 +134,6 @@
     </ClInclude>
     <ClInclude Include="Head_File\SerialPort\ToolConnect.h">
       <Filter>头文件\串口通信</Filter>
-    </ClInclude>
-    <ClInclude Include="Head_File\TcpSocket\KebaConnect.h">
-      <Filter>头文件\TCP通信</Filter>
-    </ClInclude>
-    <ClInclude Include="Head_File\TcpSocket\TcpSocket.h">
-      <Filter>头文件\TCP通信</Filter>
     </ClInclude>
     <ClInclude Include="Head_File\VrepConnect.h">
       <Filter>头文件\v_rep</Filter>
@@ -163,6 +157,12 @@
       <Filter>头文件\TCP通信</Filter>
     </ClInclude>
     <ClInclude Include="Head_File\TcpSocketRight.h">
+      <Filter>头文件\TCP通信</Filter>
+    </ClInclude>
+    <ClInclude Include="Head_File\TcpSocket\KebaConnectLeft.h">
+      <Filter>头文件\TCP通信</Filter>
+    </ClInclude>
+    <ClInclude Include="Head_File\TcpSocket\TcpSocketLeft.h">
       <Filter>头文件\TCP通信</Filter>
     </ClInclude>
   </ItemGroup>

@@ -115,7 +115,7 @@ void DebugMode::infoUpdateFrame()
 /************************机械臂网络连接、抱闸设置******************************/
 void DebugMode::on_btn_left_connect()
 {
-	Robot.CreatSocket("192.168.1.100", 8010);
+	Robot.CreatSocketLeft("192.168.1.100", 8010);
 }
 
 void DebugMode::on_btn_right_connect()

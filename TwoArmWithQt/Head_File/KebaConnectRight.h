@@ -51,7 +51,7 @@ protected:
 		RecvLen_right = 64;
 	}
 	~KebaConnectRight() {};
-	bool IsConnect_right() {
+	bool IsConnectRight() {
 		return this->m_isSocketFlag_right;
 	}
 	//功能指令发送，func为功能标识，可用范围为[OpenBrake,PTP_TCP)
