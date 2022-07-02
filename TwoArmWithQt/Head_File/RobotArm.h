@@ -6,13 +6,14 @@
 #include "HydraulicArm.h"
 #include "TouchConnect.h"
 #include "VrepConnect.h"
+#include"KebaConnectRight.h"
 
 #define LeftArm      11  //左臂
 #define RightArm     12  //右臂
 #define FactorPosition    1.0f
 #define FactorRotation    1.0f
 
-class RobotArm:public KebaConnect,public HydraulicArm,public TouchConnect,public VrepConnect
+class RobotArm:public KebaConnect,public HydraulicArm,public TouchConnect,public VrepConnect,public KebaConnectRight
 {
 public:
 	struct RobotInf{
@@ -40,7 +41,8 @@ public:
 
 	//友元线程函数，方便访问类内成员
 	friend DWORD WINAPI KebaRecvThread(LPVOID lpParam);
-	friend DWORD WINAPI HydraulicArmRecvThread(LPVOID lpParam);
+	friend DWORD WINAPI KebaRecvRightThread(LPVOID lpParam);
+	//friend DWORD WINAPI HydraulicArmRecvThread(LPVOID lpParam);
 	friend DWORD WINAPI TouchThread(LPVOID lpParam);
 	friend DWORD WINAPI VrepThread(LPVOID lpParam);
 
@@ -51,6 +53,7 @@ private:
 	HANDLE m_handle2;
 	HANDLE m_handle3;
 	HANDLE m_handle4;
+	//HANDLE m_handle5;
 };
 
 #endif

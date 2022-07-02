@@ -10,6 +10,8 @@ RobotArm::RobotArm() {
 	this->m_handle2 = NULL;
 	this->m_handle3 = NULL;
 	this->m_handle4 = NULL;
+	//this->m_handle5 = NULL;
+
 	this->LeftInf.TELMode = 0;
 	this->RightInf.TELMode = 0;
 };
@@ -22,22 +24,8 @@ void RobotArm::Set(int FlagRobot, int func, float* buf, int velA, int vel, bool 
 		else this->SetMotion(func, buf, velA, vel, FlagRad);
 	}
 	else if (FlagRobot == RightArm) {
-		switch (func) {
-		case PTP_Angle:
-			this->PTP(buf, FlagRad);
-			break;
-		case PTPRel_Angle:
-			this->PTPRel(buf, FlagRad);
-			break;
-		case PTPRel_TCP:
-			this->LinRel(buf[0], buf[1], buf[2]);
-			break;
-		case LinRel_TCP:
-			this->Lin(buf[0], buf[1], buf[2]);
-			break;
-		default:
-			break;
-		}
+		if (func < PTP_TCP) this->SetMotionRight(func);
+		else this->SetMotionRight(func, buf, velA, vel, FlagRad);
 	}
 }
 
@@ -65,25 +53,47 @@ DWORD WINAPI KebaRecvThread(LPVOID lpParam)
 	return 0;
 }
 
-//获取液压臂控制器信息
-DWORD WINAPI HydraulicArmRecvThread(LPVOID lpParam)
+DWORD WINAPI KebaRecvRightThread(LPVOID lpParam)
 {
 	RobotArm* pR = (RobotArm*)lpParam;
-	//debugmode->ThreadShow("hyhy");
+	//debugmode->ThreadShow("kebakeba");
 	while (true) {
-		pR->RightInf.Connect = pR->IsSerialFlag;
-		if (pR->IsSerialFlag) {
-			pR->HydraulicArmAnalyse();
+		pR->RightInf.Connect = pR->m_isSocketFlag_right;
+		if (pR->m_isSocketFlag_right) {
+			pR->KebaAnalyseRight();
+			pR->RightInf.Brake = pR->enable_right;
+			pR->RightInf.Script = pR->script_right;
 			for (int i = 0; i < 6; i++) {
-				pR->RightInf.Angle[i] = pR->JointData[i];
-				pR->RightInf.AngleRad[i] = pR->RadJointData[i];
-				pR->RightInf.TCP[i] = pR->TCPData[i];
+				pR->RightInf.Angle[i] = pR->angle_right[i];
+				pR->RightInf.AngleRad[i] = pR->RadAngle_right[i];
+				pR->RightInf.TCP[i] = pR->tcp_right[i];
 			}
 		}
+
 	}
 
 	return 0;
 }
+
+//获取液压臂控制器信息
+//DWORD WINAPI HydraulicArmRecvThread(LPVOID lpParam)
+//{
+//	RobotArm* pR = (RobotArm*)lpParam;
+//	//debugmode->ThreadShow("hyhy");
+//	while (true) {
+//		pR->RightInf.Connect = pR->IsSerialFlag;
+//		if (pR->IsSerialFlag) {
+//			pR->HydraulicArmAnalyse();
+//			for (int i = 0; i < 6; i++) {
+//				pR->RightInf.Angle[i] = pR->JointData[i];
+//				pR->RightInf.AngleRad[i] = pR->RadJointData[i];
+//				pR->RightInf.TCP[i] = pR->TCPData[i];
+//			}
+//		}
+//	}
+//
+//	return 0;
+//}
 
 //获取Touch信息
 DWORD WINAPI TouchThread(LPVOID lpParam) {
@@ -192,7 +202,8 @@ DWORD WINAPI VrepThread(LPVOID lpParam) {
 void RobotArm::StartUp() {
 	//DP0("@@@@@@@@@@----------startup开始执行---------@@@@@@@@@@@@@\n");
 	this->m_handle1 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(KebaRecvThread), this, 0, 0);
-	this->m_handle2 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(HydraulicArmRecvThread), this, 0, 0);
+	//this->m_handle2 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(HydraulicArmRecvThread), this, 0, 0);
+	this->m_handle2 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(KebaRecvRightThread), this, 0, 0);
 	this->m_handle3 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(TouchThread), this, 0, 0);
 	this->m_handle4 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(VrepThread), this, 0, 0);
 }

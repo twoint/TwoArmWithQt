@@ -97,6 +97,7 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Head_File\TcpSocketRight.cpp" />
     <ClCompile Include="PageContainer.cpp" />
     <ClCompile Include="WorkMode.cpp" />
     <ClCompile Include="Work_01.cpp" />
@@ -120,11 +121,13 @@
     <ClInclude Include="DebugPrintf.h" />
     <ClInclude Include="Head_File\AutoWork.h" />
     <ClInclude Include="Head_File\cvTest.h" />
+    <ClInclude Include="Head_File\KebaConnectRight.h" />
     <ClInclude Include="Head_File\RobotArm.h" />
     <ClInclude Include="Head_File\rotation.h" />
     <ClInclude Include="Head_File\SerialPort\HydraulicArm.h" />
     <ClInclude Include="Head_File\SerialPort\SerialPort.h" />
     <ClInclude Include="Head_File\SerialPort\ToolConnect.h" />
+    <ClInclude Include="Head_File\TcpSocketRight.h" />
     <ClInclude Include="Head_File\TcpSocket\KebaConnect.h" />
     <ClInclude Include="Head_File\TcpSocket\TcpSocket.h" />
     <ClInclude Include="Head_File\TouchConnect.h" />

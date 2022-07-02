@@ -37,12 +37,12 @@ private slots:
 	void on_btn_left_arm_up();
 	void on_btn_left_arm_down();
 
-	//void on_btn_right_arm_forward();
-	//void on_btn_right_arm_backward();
-	//void on_btn_right_arm_left();
-	//void on_btn_right_arm_right();
-	//void on_btn_right_arm_up();
-	//void on_btn_right_arm_down();
+	void on_btn_right_arm_forward();
+	void on_btn_right_arm_backward();
+	void on_btn_right_arm_left();
+	void on_btn_right_arm_right();
+	void on_btn_right_arm_up();
+	void on_btn_right_arm_down();
 
 	/*********************机械臂网络连接、抱闸设置*************************/
 	void on_btn_left_connect();

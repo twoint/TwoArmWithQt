@@ -11,7 +11,8 @@ extern ToolConnect ToolConnectCom;
 
 static float LeftValue = 1.0f;		//左臂示教比例
 static float RightValue = 1.0f;		//右臂示教比例
-float Angle_Dis[6] = { 0,0,0,0,0,0 };
+float Angle_Dis_Left[6] = { 0,0,0,0,0,0 };
+float Angle_Dis_Right[6] = { 0,0,0,0,0,0 };
 
 DebugMode::DebugMode(QWidget *parent)
 	: QWidget(parent)
@@ -45,12 +46,12 @@ DebugMode::DebugMode(QWidget *parent)
 	connect(ui.btn_left_arm_up, SIGNAL(clicked()), this, SLOT(on_btn_left_arm_up()));
 	connect(ui.btn_left_arm_down, SIGNAL(clicked()), this, SLOT(on_btn_left_arm_down()));
 
-	//connect(ui.btn_right_arm_forword, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_forward()));
-	//connect(ui.btn_right_arm_backward, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_backward()));
-	//connect(ui.btn_right_arm_left, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_left()));
-	//connect(ui.btn_right_arm_right, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_right()));
-	//connect(ui.btn_right_arm_up, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_up()));
-	//connect(ui.btn_right_arm_down, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_down()));
+	connect(ui.btn_right_arm_forword, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_forward()));
+	connect(ui.btn_right_arm_backward, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_backward()));
+	connect(ui.btn_right_arm_left, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_left()));
+	connect(ui.btn_right_arm_right, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_right()));
+	connect(ui.btn_right_arm_up, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_up()));
+	connect(ui.btn_right_arm_down, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_down()));
 
 
 }
@@ -114,12 +115,13 @@ void DebugMode::infoUpdateFrame()
 /************************机械臂网络连接、抱闸设置******************************/
 void DebugMode::on_btn_left_connect()
 {
-	Robot.CreatSocket("192.168.1.101", 8010);
+	Robot.CreatSocket("192.168.1.100", 8010);
 }
 
 void DebugMode::on_btn_right_connect()
 {
-	Robot.OpenCom("COM1", 115200, 0, 8, 1);//连接网络
+	Robot.CreatSocketRight("192.168.1.101", 8010);
+	//Robot.OpenCom("COM1", 115200, 0, 8, 1);//连接网络
 }
 
 void DebugMode::on_btn_left_break_open()
@@ -165,83 +167,78 @@ void DebugMode::on_btn_right_break_close()
 //}
 
 /************************方向控制******************************/
+//左
 void DebugMode::on_btn_left_arm_forward()
 {
-	Angle_Dis[1] = -LeftValue;
-	Robot.Set(LeftArm, PTPRel_TCP, Angle_Dis);
+	Angle_Dis_Left[1] = -LeftValue;
+	Robot.Set(LeftArm, PTPRel_TCP, Angle_Dis_Left);
 }
 
 void DebugMode::on_btn_left_arm_backward()
 {
-	Angle_Dis[1] = LeftValue;
-	Robot.Set(LeftArm, PTPRel_TCP, Angle_Dis);
+	Angle_Dis_Left[1] = LeftValue;
+	Robot.Set(LeftArm, PTPRel_TCP, Angle_Dis_Left);
 }
 
 void DebugMode::on_btn_left_arm_left()
 {
-	Angle_Dis[0] = LeftValue;
-	Robot.Set(LeftArm, PTPRel_TCP, Angle_Dis);
+	Angle_Dis_Left[0] = LeftValue;
+	Robot.Set(LeftArm, PTPRel_TCP, Angle_Dis_Left);
 }
 
 void DebugMode::on_btn_left_arm_right()
 {
-	Angle_Dis[0] = -LeftValue;
-	Robot.Set(LeftArm, PTPRel_TCP, Angle_Dis);
+	Angle_Dis_Left[0] = -LeftValue;
+	Robot.Set(LeftArm, PTPRel_TCP, Angle_Dis_Left);
 }
 
 void DebugMode::on_btn_left_arm_up()
 {
-	Angle_Dis[2] = LeftValue;
-	Robot.Set(LeftArm, PTPRel_TCP, Angle_Dis);
+	Angle_Dis_Left[2] = LeftValue;
+	Robot.Set(LeftArm, PTPRel_TCP, Angle_Dis_Left);
 }
 
 void DebugMode::on_btn_left_arm_down()
 {
-	Angle_Dis[2] = -LeftValue;
-	Robot.Set(LeftArm, PTPRel_TCP, Angle_Dis);
+	Angle_Dis_Left[2] = -LeftValue;
+	Robot.Set(LeftArm, PTPRel_TCP, Angle_Dis_Left);
+}
+//右
+void DebugMode::on_btn_right_arm_forward()
+{
+	Angle_Dis_Right[1] = -RightValue;
+	Robot.Set(RightArm, PTPRel_TCP, Angle_Dis_Right);
 }
 
-//void DebugMode::on_btn_right_arm_forward()
-//{
-//	float V[6] = { 0 };
-//	V[1] = -10 * RightValue;
-//	rightArm.MoveS(V);
-//}
-//
-//void DebugMode::on_btn_right_arm_backward()
-//{
-//	float V[6] = { 0 };
-//	V[1] = 10 * RightValue;
-//	rightArm.MoveS(V);
-//}
-//
-//void DebugMode::on_btn_right_arm_left()
-//{
-//	float V[6] = { 0 };
-//	V[0] = 10 * RightValue;
-//	rightArm.MoveS(V);
-//}
-//
-//void DebugMode::on_btn_right_arm_right()
-//{
-//	float V[6] = { 0 };
-//	V[0] = -10 * RightValue;
-//	rightArm.MoveS(V);
-//}
-//
-//void DebugMode::on_btn_right_arm_up()
-//{
-//	float V[6] = { 0 };
-//	V[2] = 10 * RightValue;
-//	rightArm.MoveS(V);
-//}
-//
-//void DebugMode::on_btn_right_arm_down()
-//{
-//	float V[6] = { 0 };
-//	V[2] = -10 * RightValue;
-//	rightArm.MoveS(V);
-//}
+void DebugMode::on_btn_right_arm_backward()
+{
+	Angle_Dis_Right[1] = RightValue;
+	Robot.Set(RightArm, PTPRel_TCP, Angle_Dis_Right);
+}
+
+void DebugMode::on_btn_right_arm_left()
+{
+	Angle_Dis_Right[0] = RightValue;
+	Robot.Set(RightArm, PTPRel_TCP, Angle_Dis_Right);
+}
+
+void DebugMode::on_btn_right_arm_right()
+{
+	Angle_Dis_Right[0] = -RightValue;
+	Robot.Set(RightArm, PTPRel_TCP, Angle_Dis_Right);
+}
+
+void DebugMode::on_btn_right_arm_up()
+{
+	Angle_Dis_Right[2] = RightValue;
+	Robot.Set(RightArm, PTPRel_TCP, Angle_Dis_Right);
+}
+
+void DebugMode::on_btn_right_arm_down()
+{
+	Angle_Dis_Right[2] = -RightValue;
+	Robot.Set(RightArm, PTPRel_TCP, Angle_Dis_Right);
+}
 
 
 /************************退出*************************/

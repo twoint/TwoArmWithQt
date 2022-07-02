@@ -118,6 +118,9 @@
     <ClCompile Include="Work_01.cpp">
       <Filter>源文件\UI\work</Filter>
     </ClCompile>
+    <ClCompile Include="Head_File\TcpSocketRight.cpp">
+      <Filter>源文件\TCP通信</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Head_File\RobotArm.h">
@@ -155,6 +158,12 @@
     </ClInclude>
     <ClInclude Include="DebugPrintf.h">
       <Filter>头文件\其它</Filter>
+    </ClInclude>
+    <ClInclude Include="Head_File\KebaConnectRight.h">
+      <Filter>头文件\TCP通信</Filter>
+    </ClInclude>
+    <ClInclude Include="Head_File\TcpSocketRight.h">
+      <Filter>头文件\TCP通信</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
