@@ -10,10 +10,10 @@
 
 #define LeftArm      11  //×ó±Û
 #define RightArm     12  //ÓÒ±Û
-#define FactorPosition    1.0f
+#define FactorPosition    1.0f	
 #define FactorRotation    1.0f
 
-class RobotArm:public KebaConnectLeft,public HydraulicArm,public TouchConnect,public VrepConnect,public KebaConnectRight
+class RobotArm:public KebaConnectLeft,public KebaConnectRight,public HydraulicArm,public TouchConnect,public VrepConnect
 {
 public:
 	struct RobotInf{

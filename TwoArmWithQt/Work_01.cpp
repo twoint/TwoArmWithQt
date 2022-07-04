@@ -5,7 +5,7 @@
 
 extern RobotArm Robot;
 
-
+string video_adress = "rtsp://192.168.1.137:554/11/user=admin&password=&channel=1&stream=0.sdp?";
 
 Work_01::Work_01(QWidget *parent)
 	: QWidget(parent)
@@ -319,21 +319,31 @@ void Work_01::on_btn_vrep_show_switch()
 		ui.label_vrep_show->setStyleSheet("border-radius:20px;background-color: rgba(255, 255, 255, 0);");
 		vrepTimer->stop();
 		ui.plainTextEdit->appendPlainText("vrep已关闭...");
-
 	}
 }
 
 /************************相机控制******************************/
 void Work_01::importCameraFrame()
 {
-	capture >> frame;
-	cvtColor(frame, frame, CV_BGR2RGB);//only RGB of Qt
-	QImage srcQImage = QImage((uchar*)(frame.data), frame.cols, frame.rows, QImage::Format_RGB888);
-	ui.label_camera_show->setPixmap(getRoundRectPixmap(QPixmap::fromImage(srcQImage), srcQImage.size(), 20));//显示圆角图片
-	//ui.label_camera_show->setPixmap(QPixmap::fromImage(srcQImage));
-	ui.label_camera_show->setStyleSheet("border-radius:20px;");
-	ui.label_camera_show->setScaledContents(true);//图片缩放至整个屏幕
-	//ui.label_camera_show->resize(srcQImage.size());
+	//capture >> videoFrame;
+	if (!capture.read(videoFrame))
+	{
+		ui.plainTextEdit->appendPlainText("no frame");
+		//capture.release();
+		capture.open(video_adress);
+	}
+	else
+	{
+		cvtColor(videoFrame, videoFrame, CV_BGR2RGB);//only RGB of Qt
+		srcQImage = QImage((uchar*)(videoFrame.data), videoFrame.cols, videoFrame.rows, QImage::Format_RGB888);
+		ui.label_camera_show->setPixmap(getRoundRectPixmap(QPixmap::fromImage(srcQImage), srcQImage.size(), 20));//显示圆角图片
+		//ui.label_camera_show->setPixmap(QPixmap::fromImage(srcQImage));
+		ui.label_camera_show->setStyleSheet("border-radius:20px;");
+		ui.label_camera_show->setScaledContents(true);//图片缩放至整个屏幕
+		//ui.label_camera_show->resize(srcQImage.size());
+		ui.plainTextEdit->appendPlainText("show frame");
+	}
+	
 }
 
 void Work_01::on_btn_camera_show_switch()
@@ -341,10 +351,17 @@ void Work_01::on_btn_camera_show_switch()
 	camera_show_flag = !camera_show_flag;
 	if (camera_show_flag)//打开
 	{
-		capture.open(0);
-		cameraTimer->start(33);// Start timing, Signal out when timeout
-		ui.plainTextEdit->appendPlainText("相机已打开...");
-
+		//capture.open(0);
+		//capture.open(video_adress);
+		if (!capture.open(video_adress))
+		{
+			ui.plainTextEdit->appendPlainText("相机无法打开...");
+		}
+		else
+		{
+			cameraTimer->start(20);// Start timing, Signal out when timeout
+			ui.plainTextEdit->appendPlainText("相机已打开...");
+		}
 	}
 	else//关闭
 	{
@@ -353,7 +370,6 @@ void Work_01::on_btn_camera_show_switch()
 		image.load(".\\picture\\debug_mode\\camera.png");
 		ui.label_camera_show->setPixmap(QPixmap::fromImage(image));
 		ui.label_camera_show->setStyleSheet("border-radius:20px;background-color: rgba(255, 255, 255, 0);");
-
 
 		cameraTimer->stop();
 		capture.release();

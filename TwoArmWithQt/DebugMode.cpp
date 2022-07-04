@@ -32,7 +32,9 @@ DebugMode::DebugMode(QWidget *parent)
 	//connect(ui.btn_arrester_grab_off, SIGNAL(clicked()), this, SLOT(on_btn_arrester_grab_off()));
 
 	connect(ui.btn_left_connect, SIGNAL(clicked()), this, SLOT(on_btn_left_connect()));
+	connect(ui.btn_left_disconnect, SIGNAL(clicked()), this, SLOT(on_btn_left_disconnect()));
 	connect(ui.btn_right_connect, SIGNAL(clicked()), this, SLOT(on_btn_right_connect()));
+	connect(ui.btn_right_disconnect, SIGNAL(clicked()), this, SLOT(on_btn_right_disconnect()));
 
 	connect(ui.btn_left_break_open, SIGNAL(clicked()), this, SLOT(on_btn_left_break_open()));
 	connect(ui.btn_left_break_close, SIGNAL(clicked()), this, SLOT(on_btn_left_break_close()));
@@ -53,6 +55,8 @@ DebugMode::DebugMode(QWidget *parent)
 	connect(ui.btn_right_arm_up, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_up()));
 	connect(ui.btn_right_arm_down, SIGNAL(clicked()), this, SLOT(on_btn_right_arm_down()));
 
+	
+	
 
 }
 
@@ -109,7 +113,28 @@ void DebugMode::infoUpdateFrame()
 	}
 
 	//右臂角度信息
-	//ui.L_Joint_1->setValue(CurURData.Left_q_actual[1] * 180 / pi);
+	ui.L_Joint_0->setValue(Robot.LeftInf.Angle[0]);
+	ui.L_Joint_1->setValue(Robot.LeftInf.Angle[1]);
+	ui.L_Joint_2->setValue(Robot.LeftInf.Angle[2]);
+	ui.L_Joint_3->setValue(Robot.LeftInf.Angle[3]);
+	ui.L_Joint_4->setValue(Robot.LeftInf.Angle[4]);
+	ui.L_Joint_5->setValue(Robot.LeftInf.Angle[5]);
+
+	ui.R_Joint_0->setValue(Robot.RightInf.Angle[0]);
+	ui.R_Joint_1->setValue(Robot.RightInf.Angle[1]);
+	ui.R_Joint_2->setValue(Robot.RightInf.Angle[2]);
+	ui.R_Joint_3->setValue(Robot.RightInf.Angle[3]);
+	ui.R_Joint_4->setValue(Robot.RightInf.Angle[4]);
+	ui.R_Joint_5->setValue(Robot.RightInf.Angle[5]);
+
+	ui.label_L_joiint_0->setText(QString::number(Robot.LeftInf.Angle[0]));
+	ui.label_L_joiint_1->setText(QString::number(Robot.LeftInf.Angle[1]));
+	ui.label_L_joiint_2->setText(QString::number(Robot.LeftInf.Angle[2]));
+	ui.label_L_joiint_3->setText(QString::number(Robot.LeftInf.Angle[3]));
+	ui.label_L_joiint_4->setText(QString::number(Robot.LeftInf.Angle[4]));
+	ui.label_L_joiint_5->setText(QString::number(Robot.LeftInf.Angle[5]));
+	
+	
 }
 
 /************************机械臂网络连接、抱闸设置******************************/
@@ -118,10 +143,20 @@ void DebugMode::on_btn_left_connect()
 	Robot.CreatSocketLeft("192.168.1.100", 8010);
 }
 
+void DebugMode::on_btn_left_disconnect()
+{
+	Robot.CloseSocketLeft();
+}
+
 void DebugMode::on_btn_right_connect()
 {
 	Robot.CreatSocketRight("192.168.1.101", 8010);
 	//Robot.OpenCom("COM1", 115200, 0, 8, 1);//连接网络
+}
+
+void DebugMode::on_btn_right_disconnect()
+{
+	Robot.CloseSocketRight();
 }
 
 void DebugMode::on_btn_left_break_open()
@@ -143,6 +178,7 @@ void DebugMode::on_btn_right_break_close()
 {
 	Robot.Set(RightArm, CloseBrake);
 }
+/********************机械臂角度控制********************/
 
 
 /************************工具控制******************************/

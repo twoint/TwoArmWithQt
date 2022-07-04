@@ -46,12 +46,28 @@ private slots:
 
 	/*********************机械臂网络连接、抱闸设置*************************/
 	void on_btn_left_connect();
+	void on_btn_left_disconnect();
 	void on_btn_right_connect();
+	void on_btn_right_disconnect();
 	void on_btn_left_break_open();
 	void on_btn_left_break_close();
 	void on_btn_right_break_open();
 	void on_btn_right_break_close();
 
+	/*********************机械臂角度值修改*************************/
+	//void on_btn_L_joint_0_dec();
+	//void on_btn_L_joint_1_dec();
+	//void on_btn_L_joint_2_dec();
+	//void on_btn_L_joint_3_dec();
+	//void on_btn_L_joint_4_dec();
+	//void on_btn_L_joint_5_dec();
+
+	//void on_btn_L_joint_0_inc();
+	//void on_btn_L_joint_1_inc();
+	//void on_btn_L_joint_2_inc();
+	//void on_btn_L_joint_3_inc();
+	//void on_btn_L_joint_4_inc();
+	//void on_btn_L_joint_5_inc();
 
 	/*********************退出*************************/
 	void on_btn_exit();

@@ -26,8 +26,10 @@ private:
 	QTimer *vrepTimer;//vrep图像刷新
 	QTimer *cameraTimer;//camera图像刷新
 	QTimer *infoUpdateTimer;//传感器信息刷新
+
 	cv::VideoCapture capture;
-	cv::Mat frame;
+	cv::Mat videoFrame;
+	QImage srcQImage;
 
 	void signalSlotConnect();
 	void selectToolButton(QToolButton *pTlb);
