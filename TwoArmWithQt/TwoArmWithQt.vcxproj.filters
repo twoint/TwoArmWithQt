@@ -66,6 +66,12 @@
     <Filter Include="Form\work">
       <UniqueIdentifier>{d30a3a37-1f14-4a00-9d57-1692e87006c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\Camera">
+      <UniqueIdentifier>{0925b3be-019f-4e2d-acd7-197e74f26ec6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\Camera">
+      <UniqueIdentifier>{643bd118-8667-4753-beea-6a75436e7518}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="Login.qrc">
@@ -121,6 +127,9 @@
     <ClCompile Include="Head_File\TcpSocket\TcpSocketLeft.cpp">
       <Filter>源文件\TCP通信</Filter>
     </ClCompile>
+    <ClCompile Include="Head_File\CameraShow.cpp">
+      <Filter>源文件\Camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Head_File\RobotArm.h">
@@ -164,6 +173,9 @@
     </ClInclude>
     <ClInclude Include="Head_File\TcpSocket\TcpSocketLeft.h">
       <Filter>头文件\TCP通信</Filter>
+    </ClInclude>
+    <ClInclude Include="Head_File\CameraShow.h">
+      <Filter>头文件\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

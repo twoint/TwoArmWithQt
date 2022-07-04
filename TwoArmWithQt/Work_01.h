@@ -27,8 +27,6 @@ private:
 	QTimer *cameraTimer;//camera图像刷新
 	QTimer *infoUpdateTimer;//传感器信息刷新
 
-	cv::VideoCapture capture;
-	cv::Mat videoFrame;
 	QImage srcQImage;
 
 	void signalSlotConnect();
@@ -36,7 +34,7 @@ private:
 	QPixmap getRoundRectPixmap(QPixmap srcPixMap, const QSize & size, int radius);//处理圆角图片
 
 	bool vrep_show_flag = false;
-	bool camera_show_flag = false;
+	//bool camera_show_flag = false;
 
 
 signals:

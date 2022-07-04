@@ -97,6 +97,7 @@
     </QtMoc>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Head_File\CameraShow.cpp" />
     <ClCompile Include="Head_File\TcpSocketRight.cpp" />
     <ClCompile Include="PageContainer.cpp" />
     <ClCompile Include="WorkMode.cpp" />
@@ -120,6 +121,7 @@
     <QtMoc Include="DebugMode.h" />
     <ClInclude Include="DebugPrintf.h" />
     <ClInclude Include="Head_File\AutoWork.h" />
+    <ClInclude Include="Head_File\CameraShow.h" />
     <ClInclude Include="Head_File\cvTest.h" />
     <ClInclude Include="Head_File\KebaConnectRight.h" />
     <ClInclude Include="Head_File\RobotArm.h" />

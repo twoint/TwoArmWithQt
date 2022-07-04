@@ -7,13 +7,15 @@
 #include "TouchConnect.h"
 #include "VrepConnect.h"
 #include"KebaConnectRight.h"
+#include"CameraShow.h"
+
 
 #define LeftArm      11  //左臂
 #define RightArm     12  //右臂
 #define FactorPosition    1.0f	
 #define FactorRotation    1.0f
 
-class RobotArm:public KebaConnectLeft,public KebaConnectRight,public HydraulicArm,public TouchConnect,public VrepConnect
+class RobotArm:public KebaConnectLeft,public KebaConnectRight,public HydraulicArm,public TouchConnect,public VrepConnect,public CameraShow
 {
 public:
 	struct RobotInf{
@@ -45,6 +47,7 @@ public:
 	//friend DWORD WINAPI HydraulicArmRecvThread(LPVOID lpParam);
 	friend DWORD WINAPI TouchThread(LPVOID lpParam);
 	friend DWORD WINAPI VrepThread(LPVOID lpParam);
+	friend DWORD WINAPI CameraThread(LPVOID lpParam);
 
 	//启动线程函数
 	void StartUp();
@@ -53,7 +56,7 @@ private:
 	HANDLE m_handle2;
 	HANDLE m_handle3;
 	HANDLE m_handle4;
-	//HANDLE m_handle5;
+	HANDLE m_handle5;
 };
 
 #endif

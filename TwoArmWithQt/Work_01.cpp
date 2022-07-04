@@ -5,7 +5,7 @@
 
 extern RobotArm Robot;
 
-string video_adress = "rtsp://192.168.1.137:554/11/user=admin&password=&channel=1&stream=0.sdp?";
+//string video_adress = "rtsp://192.168.1.137:554/11/user=admin&password=&channel=1&stream=0.sdp?";
 
 Work_01::Work_01(QWidget *parent)
 	: QWidget(parent)
@@ -165,9 +165,11 @@ void Work_01::on_btn_exit()
 	ui.label_camera_show->setScaledContents(false);
 	ui.label_camera_show->setPixmap(QPixmap::fromImage(image_camera_init));
 
+	Robot.showFlag = false;
+	Sleep(300);
 	vrepTimer->stop();
 	cameraTimer->stop();
-	capture.release();
+	Robot.CloseCamera();
 	emit jumpPageTo(3);
 }
 
@@ -325,55 +327,34 @@ void Work_01::on_btn_vrep_show_switch()
 /************************相机控制******************************/
 void Work_01::importCameraFrame()
 {
-	//capture >> videoFrame;
-	if (!capture.read(videoFrame))
-	{
-		ui.plainTextEdit->appendPlainText("no frame");
-		//capture.release();
-		capture.open(video_adress);
-	}
-	else
-	{
-		cvtColor(videoFrame, videoFrame, CV_BGR2RGB);//only RGB of Qt
-		srcQImage = QImage((uchar*)(videoFrame.data), videoFrame.cols, videoFrame.rows, QImage::Format_RGB888);
-		ui.label_camera_show->setPixmap(getRoundRectPixmap(QPixmap::fromImage(srcQImage), srcQImage.size(), 20));//显示圆角图片
-		//ui.label_camera_show->setPixmap(QPixmap::fromImage(srcQImage));
-		ui.label_camera_show->setStyleSheet("border-radius:20px;");
-		ui.label_camera_show->setScaledContents(true);//图片缩放至整个屏幕
-		//ui.label_camera_show->resize(srcQImage.size());
-		ui.plainTextEdit->appendPlainText("show frame");
-	}
-	
+	cvtColor(Robot.videoFrame, Robot.videoFrame, CV_BGR2RGB);//only RGB of Qt
+	srcQImage = QImage((uchar*)(Robot.videoFrame.data), Robot.videoFrame.cols, Robot.videoFrame.rows, QImage::Format_RGB888);
+	ui.label_camera_show->setPixmap(getRoundRectPixmap(QPixmap::fromImage(srcQImage), srcQImage.size(), 20));//显示圆角图片
+	//ui.label_camera_show->setPixmap(QPixmap::fromImage(srcQImage));
+	ui.label_camera_show->setStyleSheet("border-radius:20px;");
+	ui.label_camera_show->setScaledContents(true);//图片缩放至整个屏幕
+	//ui.label_camera_show->resize(srcQImage.size());
+	//ui.plainTextEdit->appendPlainText("show frame");
 }
 
 void Work_01::on_btn_camera_show_switch()
 {
-	camera_show_flag = !camera_show_flag;
-	if (camera_show_flag)//打开
+	Robot.showFlag = !Robot.showFlag;
+	if (Robot.showFlag)
 	{
-		//capture.open(0);
-		//capture.open(video_adress);
-		if (!capture.open(video_adress))
-		{
-			ui.plainTextEdit->appendPlainText("相机无法打开...");
-		}
-		else
-		{
-			cameraTimer->start(20);// Start timing, Signal out when timeout
-			ui.plainTextEdit->appendPlainText("相机已打开...");
-		}
+		Robot.OpenCamera();
+		Sleep(300);
+		cameraTimer->start(30);
 	}
-	else//关闭
+	else
 	{
+		Robot.CloseCamera();
+		cameraTimer->stop();
 		//显示相机初始化图片
 		QImage image;
 		image.load(".\\picture\\debug_mode\\camera.png");
 		ui.label_camera_show->setPixmap(QPixmap::fromImage(image));
 		ui.label_camera_show->setStyleSheet("border-radius:20px;background-color: rgba(255, 255, 255, 0);");
-
-		cameraTimer->stop();
-		capture.release();
-		ui.plainTextEdit->appendPlainText("相机已关闭...");
 	}
 }
 

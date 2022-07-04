@@ -62,7 +62,7 @@
      <x>0</x>
      <y>0</y>
      <width>1501</width>
-     <height>920</height>
+     <height>928</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -992,7 +992,7 @@ QToolButton:pressed, QToolButton:checked {
             <x>0</x>
             <y>10</y>
             <width>122</width>
-            <height>281</height>
+            <height>300</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout">

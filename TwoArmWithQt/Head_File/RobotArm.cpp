@@ -10,8 +10,8 @@ RobotArm::RobotArm() {
 	this->m_handle2 = NULL;
 	this->m_handle3 = NULL;
 	this->m_handle4 = NULL;
-	//this->m_handle5 = NULL;
-
+	this->m_handle5 = NULL;
+	
 	this->LeftInf.TELMode = 0;
 	this->RightInf.TELMode = 0;
 };
@@ -49,7 +49,6 @@ DWORD WINAPI KebaRecvLeftThread(LPVOID lpParam)
 		}
 
 	}
-
 	return 0;
 }
 
@@ -198,6 +197,19 @@ DWORD WINAPI VrepThread(LPVOID lpParam) {
 	return 0;
 }
 
+DWORD WINAPI CameraThread(LPVOID lpParam)
+{
+	RobotArm* pR = (RobotArm*)lpParam;
+	while (true)
+	{
+		if (pR->showFlag)
+		{
+			pR->Show();
+		}
+	}
+	return 0;
+}
+
 //启动线程函数
 void RobotArm::StartUp() {
 	//DP0("@@@@@@@@@@----------startup开始执行---------@@@@@@@@@@@@@\n");
@@ -206,4 +218,5 @@ void RobotArm::StartUp() {
 	this->m_handle2 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(KebaRecvRightThread), this, 0, 0);
 	this->m_handle3 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(TouchThread), this, 0, 0);
 	this->m_handle4 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(VrepThread), this, 0, 0);
+	this->m_handle5 = CreateThread(NULL, 0, LPTHREAD_START_ROUTINE(CameraThread), this, 0, 0);
 }
