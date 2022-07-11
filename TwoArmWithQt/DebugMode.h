@@ -55,22 +55,39 @@ private slots:
 	void on_btn_right_break_close();
 
 	/*********************机械臂角度值修改*************************/
-	//void on_btn_L_joint_0_dec();
-	//void on_btn_L_joint_1_dec();
-	//void on_btn_L_joint_2_dec();
-	//void on_btn_L_joint_3_dec();
-	//void on_btn_L_joint_4_dec();
-	//void on_btn_L_joint_5_dec();
+	void on_btn_L_joint_0_dec();
+	void on_btn_L_joint_1_dec();
+	void on_btn_L_joint_2_dec();
+	void on_btn_L_joint_3_dec();
+	void on_btn_L_joint_4_dec();
+	void on_btn_L_joint_5_dec();
 
-	//void on_btn_L_joint_0_inc();
-	//void on_btn_L_joint_1_inc();
-	//void on_btn_L_joint_2_inc();
-	//void on_btn_L_joint_3_inc();
-	//void on_btn_L_joint_4_inc();
-	//void on_btn_L_joint_5_inc();
+	void on_btn_L_joint_0_inc();
+	void on_btn_L_joint_1_inc();
+	void on_btn_L_joint_2_inc();
+	void on_btn_L_joint_3_inc();
+	void on_btn_L_joint_4_inc();
+	void on_btn_L_joint_5_inc();
+
+	void on_btn_R_joint_0_dec();
+	void on_btn_R_joint_1_dec();
+	void on_btn_R_joint_2_dec();
+	void on_btn_R_joint_3_dec();
+	void on_btn_R_joint_4_dec();
+	void on_btn_R_joint_5_dec();
+
+	void on_btn_R_joint_0_inc();
+	void on_btn_R_joint_1_inc();
+	void on_btn_R_joint_2_inc();
+	void on_btn_R_joint_3_inc();
+	void on_btn_R_joint_4_inc();
+	void on_btn_R_joint_5_inc();
+
+	//停止
+	void on_btn_stop();
 
 	/*********************退出*************************/
-	void on_btn_exit();
+	//void on_btn_exit();
 
 
 

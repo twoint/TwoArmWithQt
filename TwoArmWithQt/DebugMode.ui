@@ -1283,105 +1283,11 @@ QPushButton:pressed{
     </property>
    </widget>
   </widget>
-  <widget class="QSplitter" name="splitter">
-   <property name="geometry">
-    <rect>
-     <x>1040</x>
-     <y>30</y>
-     <width>200</width>
-     <height>350</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Vertical</enum>
-   </property>
-   <widget class="QDoubleSpinBox" name="L_Joint_0">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px; 
-</string>
-    </property>
-    <property name="minimum">
-     <double>-360.000000000000000</double>
-    </property>
-    <property name="maximum">
-     <double>360.000000000000000</double>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="L_Joint_1">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px; 
-</string>
-    </property>
-    <property name="minimum">
-     <double>-360.000000000000000</double>
-    </property>
-    <property name="maximum">
-     <double>360.000000000000000</double>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="L_Joint_2">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px; 
-</string>
-    </property>
-    <property name="minimum">
-     <double>-360.000000000000000</double>
-    </property>
-    <property name="maximum">
-     <double>360.000000000000000</double>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="L_Joint_3">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px; 
-</string>
-    </property>
-    <property name="minimum">
-     <double>-360.000000000000000</double>
-    </property>
-    <property name="maximum">
-     <double>360.000000000000000</double>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="L_Joint_4">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px; 
-</string>
-    </property>
-    <property name="minimum">
-     <double>-360.000000000000000</double>
-    </property>
-    <property name="maximum">
-     <double>360.000000000000000</double>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="L_Joint_5">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px; 
-</string>
-    </property>
-    <property name="minimum">
-     <double>-360.000000000000000</double>
-    </property>
-    <property name="maximum">
-     <double>360.000000000000000</double>
-    </property>
-   </widget>
-  </widget>
   <widget class="QSplitter" name="splitter_2">
    <property name="geometry">
     <rect>
-     <x>1270</x>
-     <y>30</y>
+     <x>1300</x>
+     <y>90</y>
      <width>200</width>
      <height>350</height>
     </rect>
@@ -1392,91 +1298,13 @@ border-radius: 15px;
    <property name="orientation">
     <enum>Qt::Vertical</enum>
    </property>
-   <widget class="QDoubleSpinBox" name="R_Joint_0">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px; 
-</string>
-    </property>
-    <property name="minimum">
-     <double>-360.000000000000000</double>
-    </property>
-    <property name="maximum">
-     <double>360.000000000000000</double>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="R_Joint_1">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px; 
-</string>
-    </property>
-    <property name="minimum">
-     <double>-360.000000000000000</double>
-    </property>
-    <property name="maximum">
-     <double>360.000000000000000</double>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="R_Joint_2">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px; 
-</string>
-    </property>
-    <property name="minimum">
-     <double>-360.000000000000000</double>
-    </property>
-    <property name="maximum">
-     <double>360.000000000000000</double>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="R_Joint_3">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px; 
-</string>
-    </property>
-    <property name="minimum">
-     <double>-360.000000000000000</double>
-    </property>
-    <property name="maximum">
-     <double>360.000000000000000</double>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="R_Joint_4">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px; 
-</string>
-    </property>
-    <property name="minimum">
-     <double>-360.000000000000000</double>
-    </property>
-    <property name="maximum">
-     <double>360.000000000000000</double>
-    </property>
-   </widget>
-   <widget class="QDoubleSpinBox" name="R_Joint_5">
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);
-border-radius: 15px; 
-</string>
-    </property>
-    <property name="minimum">
-     <double>-360.000000000000000</double>
-    </property>
-    <property name="maximum">
-     <double>360.000000000000000</double>
-    </property>
-   </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox_4">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>50</y>
-     <width>441</width>
+     <x>850</x>
+     <y>70</y>
+     <width>461</width>
      <height>371</height>
     </rect>
    </property>
@@ -1553,7 +1381,7 @@ QLabel
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_L_joiint_0">
+        <widget class="QLabel" name="label_L_joint_0">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -1620,7 +1448,7 @@ QLabel
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_L_joiint_1">
+        <widget class="QLabel" name="label_L_joint_1">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -1687,7 +1515,7 @@ QLabel
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_L_joiint_2">
+        <widget class="QLabel" name="label_L_joint_2">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -1754,7 +1582,7 @@ QLabel
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_L_joiint_3">
+        <widget class="QLabel" name="label_L_joint_3">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -1821,7 +1649,7 @@ QLabel
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_L_joiint_4">
+        <widget class="QLabel" name="label_L_joint_4">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -1888,7 +1716,7 @@ QLabel
         </widget>
        </item>
        <item>
-        <widget class="QLabel" name="label_L_joiint_5">
+        <widget class="QLabel" name="label_L_joint_5">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -1935,6 +1763,453 @@ QLabel
      </item>
     </layout>
    </widget>
+   <widget class="QWidget" name="layoutWidget_2">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>50</y>
+      <width>211</width>
+      <height>308</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QPushButton" name="btn_R_joint_0_dec">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>20</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_R_joint_0">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>R0</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_R_joint_0_inc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_12">
+       <item>
+        <widget class="QPushButton" name="btn_R_joint_1_dec">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>20</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_R_joint_1">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>R1</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_R_joint_1_inc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_13">
+       <item>
+        <widget class="QPushButton" name="btn_R_joint_2_dec">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>20</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_R_joint_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>R2</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_R_joint_2_inc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_14">
+       <item>
+        <widget class="QPushButton" name="btn_R_joint_3_dec">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>20</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_R_joint_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>R3</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_R_joint_3_inc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_15">
+       <item>
+        <widget class="QPushButton" name="btn_R_joint_4_dec">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>20</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_R_joint_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>R4</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_R_joint_4_inc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_16">
+       <item>
+        <widget class="QPushButton" name="btn_R_joint_5_dec">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>20</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_R_joint_5">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>R5</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_R_joint_5_inc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QPushButton" name="btn_stop">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>740</y>
+     <width>301</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton
+{
+	font: 25 14pt '微软雅黑 Light';
+	color: rgb(255,255,255);
+	background-color: rgb(20,196,188);
+	
+	background-color: rgb(255, 0, 0);
+    border: none;border-radius:15px;
+}
+QPushButton:hover
+{
+background-color: rgb(22,218,208);
+}
+
+QPushButton:pressed
+{
+	background-color: rgb(17,171,164);
+}</string>
+   </property>
+   <property name="text">
+    <string>停止</string>
+   </property>
   </widget>
  </widget>
  <resources/>
