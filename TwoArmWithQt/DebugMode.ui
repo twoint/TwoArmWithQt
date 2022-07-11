@@ -14,15 +14,13 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">
-
-background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(251,102,102, 200), stop:1 rgba(20,196,188, 210));</string>
+   <string notr="true"/>
   </property>
   <widget class="QPushButton" name="btn_exit">
    <property name="geometry">
     <rect>
-     <x>44</x>
-     <y>806</y>
+     <x>240</x>
+     <y>840</y>
      <width>200</width>
      <height>43</height>
     </rect>
@@ -58,10 +56,10 @@ QPushButton:pressed
   <widget class="QGroupBox" name="groupBox">
    <property name="geometry">
     <rect>
-     <x>700</x>
-     <y>500</y>
+     <x>660</x>
+     <y>30</y>
      <width>381</width>
-     <height>391</height>
+     <height>821</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -73,8 +71,32 @@ border-radius: 15px;
 
 }
 
+QPushButton {
+    background-color: #ffffff;
+    border: 1px solid #dcdfe6;
+    padding: 1px;
+    border-radius: 15px;
+	font: 10pt &quot;微软雅黑&quot;;
+	
+}
 
+QPushButton:hover {
+    background-color: #ecf5ff;
+    color: #409eff;
+}
 
+QPushButton:pressed, QPushButton:checked {
+    border: 1px solid #3a8ee6;
+    color: #409eff;
+}
+
+QLabel
+{
+	background-color: rgb(79, 181, 147);
+	border-radius: 15px; 
+	font: 75 10pt &quot;微软雅黑&quot;;
+	color: rgb(255, 255, 255);
+}
 
 </string>
    </property>
@@ -85,7 +107,7 @@ border-radius: 15px;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>110</y>
+      <y>150</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -115,12 +137,18 @@ QPushButton:pressed{
     <property name="text">
      <string/>
     </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>50</number>
+    </property>
    </widget>
    <widget class="QPushButton" name="btn_left_arm_right">
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>110</y>
+      <y>150</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -150,12 +178,18 @@ QPushButton:pressed{
     <property name="text">
      <string/>
     </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>50</number>
+    </property>
    </widget>
    <widget class="QPushButton" name="btn_left_arm_forword">
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>40</y>
+      <y>80</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -185,12 +219,18 @@ QPushButton:pressed{
     <property name="text">
      <string/>
     </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>50</number>
+    </property>
    </widget>
    <widget class="QPushButton" name="btn_left_arm_backward">
     <property name="geometry">
      <rect>
       <x>90</x>
-      <y>180</y>
+      <y>220</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -220,12 +260,18 @@ QPushButton:pressed{
     <property name="text">
      <string/>
     </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>50</number>
+    </property>
    </widget>
    <widget class="QPushButton" name="btn_left_arm_up">
     <property name="geometry">
      <rect>
       <x>270</x>
-      <y>30</y>
+      <y>70</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -260,7 +306,7 @@ QPushButton:pressed{
     <property name="geometry">
      <rect>
       <x>270</x>
-      <y>190</y>
+      <y>230</y>
       <width>100</width>
       <height>100</height>
      </rect>
@@ -294,8 +340,8 @@ QPushButton:pressed{
    <widget class="QPushButton" name="btn_left_disconnect">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>339</y>
+      <x>20</x>
+      <y>760</y>
       <width>150</width>
       <height>40</height>
      </rect>
@@ -329,8 +375,8 @@ QPushButton:pressed{
    <widget class="QPushButton" name="btn_left_break_open">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>290</y>
+      <x>220</x>
+      <y>710</y>
       <width>150</width>
       <height>40</height>
      </rect>
@@ -364,8 +410,8 @@ QPushButton:pressed{
    <widget class="QPushButton" name="btn_left_connect">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>290</y>
+      <x>20</x>
+      <y>710</y>
       <width>150</width>
       <height>40</height>
      </rect>
@@ -399,8 +445,8 @@ QPushButton:pressed{
    <widget class="QPushButton" name="btn_left_break_close">
     <property name="geometry">
      <rect>
-      <x>200</x>
-      <y>339</y>
+      <x>220</x>
+      <y>760</y>
       <width>150</width>
       <height>40</height>
      </rect>
@@ -429,6 +475,553 @@ QPushButton:pressed{
     </property>
     <property name="text">
      <string>关闭抱闸</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>390</y>
+      <width>351</width>
+      <height>308</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="btn_L_joint_0_dec">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>20</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_L_joint_0">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>L0</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_L_joint_0_inc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_7">
+       <item>
+        <widget class="QPushButton" name="btn_L_joint_1_dec">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>20</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_L_joint_1">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>L1</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_L_joint_1_inc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_8">
+       <item>
+        <widget class="QPushButton" name="btn_L_joint_2_dec">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>20</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_L_joint_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>L2</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_L_joint_2_inc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_9">
+       <item>
+        <widget class="QPushButton" name="btn_L_joint_3_dec">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>20</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_L_joint_3">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>L3</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_L_joint_3_inc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_10">
+       <item>
+        <widget class="QPushButton" name="btn_L_joint_4_dec">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>20</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_L_joint_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>L4</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_L_joint_4_inc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_11">
+       <item>
+        <widget class="QPushButton" name="btn_L_joint_5_dec">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>20</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>&lt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_L_joint_5">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>L5</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_L_joint_5_inc">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>40</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QSlider" name="left_direction_slider">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>40</y>
+      <width>241</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="left_angle_slider">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>340</y>
+      <width>241</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>30</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="left_direction_value">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>27</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="left_angle_value">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>330</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
   </widget>
@@ -914,398 +1507,10 @@ QLabel
   <widget class="QGroupBox" name="groupBox_2">
    <property name="geometry">
     <rect>
-     <x>1090</x>
-     <y>500</y>
+     <x>1080</x>
+     <y>30</y>
      <width>401</width>
-     <height>391</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QGroupBox
-{
-font: 10pt &quot;微软雅黑&quot;;
-background-color: rgba(255, 255, 255, 0);
-border-radius: 15px; 
-
-}</string>
-   </property>
-   <property name="title">
-    <string>右臂遥操作</string>
-   </property>
-   <widget class="QPushButton" name="btn_right_arm_left">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>110</y>
-      <width>100</width>
-      <height>100</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-	background-image:url(./picture/debug_mode/左.png);
-    border-radius: 20px;
-	background-color: rgba(255, 255, 255, 0);
-}
-QPushButton:hover {
-	background-color: rgba(255, 0, 0, 100);
-}
-
-QPushButton:pressed{
-	background-color: rgba(0, 100, 100, 100);
-}
-
-
-
-
-
-
-
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_right_arm_right">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>110</y>
-      <width>100</width>
-      <height>100</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-	background-image:url(./picture/debug_mode/右.png);
-    border-radius: 20px;
-	background-color: rgba(255, 255, 255, 0);
-}
-QPushButton:hover {
-	background-color: rgba(255, 0, 0, 100);
-}
-
-QPushButton:pressed{
-	background-color: rgba(0, 100, 100, 100);
-}
-
-
-
-
-
-
-
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_right_arm_forword">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>40</y>
-      <width>100</width>
-      <height>100</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-	background-image:url(./picture/debug_mode/前.png);
-    border-radius: 20px;
-	background-color: rgba(255, 255, 255, 0);
-}
-QPushButton:hover {
-	background-color: rgba(255, 0, 0, 100);
-}
-
-QPushButton:pressed{
-	background-color: rgba(0, 100, 100, 100);
-}
-
-
-
-
-
-
-
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_right_arm_backward">
-    <property name="geometry">
-     <rect>
-      <x>100</x>
-      <y>180</y>
-      <width>100</width>
-      <height>100</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-	background-image:url(./picture/debug_mode/后.png);
-    border-radius: 20px;
-	background-color: rgba(255, 255, 255, 0);
-}
-QPushButton:hover {
-	background-color: rgba(255, 0, 0, 100);
-}
-
-QPushButton:pressed{
-	background-color: rgba(0, 100, 100, 100);
-}
-
-
-
-
-
-
-
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_right_arm_up">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>30</y>
-      <width>100</width>
-      <height>100</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-	background-image:url(./picture/debug_mode/上.png);
-    border-radius: 20px;
-	background-color: rgba(255, 255, 255, 0);
-}
-QPushButton:hover {
-	background-color: rgba(255, 0, 0, 100);
-}
-
-QPushButton:pressed{
-	background-color: rgba(0, 100, 100, 100);
-}
-
-
-
-
-
-
-
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_right_arm_down">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>190</y>
-      <width>100</width>
-      <height>100</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-	background-image:url(./picture/debug_mode/下.png);
-    border-radius: 20px;
-	background-color: rgba(255, 255, 255, 0);
-}
-QPushButton:hover {
-	background-color: rgba(255, 0, 0, 100);
-}
-
-QPushButton:pressed{
-	background-color: rgba(0, 100, 100, 100);
-}
-
-
-
-
-
-
-
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_right_break_open">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>291</y>
-      <width>150</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-	font: 9pt &quot;微软雅黑&quot;;
-    border-radius: 20px;
-	background-color: rgba(100, 200, 50, 100);
-}
-QPushButton:hover {
-	background-color: rgba(255, 0, 0, 100);
-}
-
-QPushButton:pressed{
-	background-color: rgba(0, 100, 100, 100);
-}
-
-
-
-
-
-
-
-</string>
-    </property>
-    <property name="text">
-     <string>打开抱闸</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_right_connect">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>291</y>
-      <width>150</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-	font: 9pt &quot;微软雅黑&quot;;
-    border-radius: 20px;
-	background-color: rgba(100, 200, 50, 100);
-}
-QPushButton:hover {
-	background-color: rgba(255, 0, 0, 100);
-}
-
-QPushButton:pressed{
-	background-color: rgba(0, 100, 100, 100);
-}
-
-
-
-
-
-
-
-</string>
-    </property>
-    <property name="text">
-     <string>连接网络</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_right_disconnect">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>340</y>
-      <width>150</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-	font: 9pt &quot;微软雅黑&quot;;
-    border-radius: 20px;
-	background-color: rgba(100, 200, 50, 100);
-}
-QPushButton:hover {
-	background-color: rgba(255, 0, 0, 100);
-}
-
-QPushButton:pressed{
-	background-color: rgba(0, 100, 100, 100);
-}
-
-
-
-
-
-
-
-</string>
-    </property>
-    <property name="text">
-     <string>断开网络</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btn_right_break_close">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>340</y>
-      <width>150</width>
-      <height>40</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton{
-	font: 9pt &quot;微软雅黑&quot;;
-    border-radius: 20px;
-	background-color: rgba(100, 200, 50, 100);
-}
-QPushButton:hover {
-	background-color: rgba(255, 0, 0, 100);
-}
-
-QPushButton:pressed{
-	background-color: rgba(0, 100, 100, 100);
-}
-
-
-
-
-
-
-
-</string>
-    </property>
-    <property name="text">
-     <string>关闭抱闸</string>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QSplitter" name="splitter_2">
-   <property name="geometry">
-    <rect>
-     <x>1300</x>
-     <y>90</y>
-     <width>200</width>
-     <height>350</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Vertical</enum>
-   </property>
-  </widget>
-  <widget class="QGroupBox" name="groupBox_4">
-   <property name="geometry">
-    <rect>
-     <x>850</x>
-     <y>70</y>
-     <width>461</width>
-     <height>371</height>
+     <height>811</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -1347,428 +1552,400 @@ QLabel
 </string>
    </property>
    <property name="title">
-    <string>GroupBox</string>
+    <string>右臂遥操作</string>
    </property>
-   <widget class="QWidget" name="layoutWidget">
+   <widget class="QPushButton" name="btn_right_arm_left">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>50</y>
-      <width>211</width>
-      <height>308</height>
+      <x>20</x>
+      <y>150</y>
+      <width>100</width>
+      <height>100</height>
      </rect>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout">
-       <item>
-        <widget class="QPushButton" name="btn_L_joint_0_dec">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
-           <horstretch>20</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>&lt;</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_L_joint_0">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>L0</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_L_joint_0_inc">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>&gt;</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_7">
-       <item>
-        <widget class="QPushButton" name="btn_L_joint_1_dec">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
-           <horstretch>20</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>&lt;</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_L_joint_1">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>L1</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_L_joint_1_inc">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>&gt;</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_8">
-       <item>
-        <widget class="QPushButton" name="btn_L_joint_2_dec">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
-           <horstretch>20</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>&lt;</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_L_joint_2">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>L2</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_L_joint_2_inc">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>&gt;</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_9">
-       <item>
-        <widget class="QPushButton" name="btn_L_joint_3_dec">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
-           <horstretch>20</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>&lt;</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_L_joint_3">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>L3</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_L_joint_3_inc">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>&gt;</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_10">
-       <item>
-        <widget class="QPushButton" name="btn_L_joint_4_dec">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
-           <horstretch>20</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>&lt;</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_L_joint_4">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>L4</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_L_joint_4_inc">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>&gt;</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-     <item>
-      <layout class="QHBoxLayout" name="horizontalLayout_11">
-       <item>
-        <widget class="QPushButton" name="btn_L_joint_5_dec">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
-           <horstretch>20</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>&lt;</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLabel" name="label_L_joint_5">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>80</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>L5</string>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btn_L_joint_5_inc">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>40</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="styleSheet">
-          <string notr="true"/>
-         </property>
-         <property name="text">
-          <string>&gt;</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </item>
-    </layout>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-image:url(./picture/debug_mode/左.png);
+    border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0);
+}
+QPushButton:hover {
+	background-color: rgba(255, 0, 0, 100);
+}
+
+QPushButton:pressed{
+	background-color: rgba(0, 100, 100, 100);
+}
+
+
+
+
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>50</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_right_arm_right">
+    <property name="geometry">
+     <rect>
+      <x>180</x>
+      <y>150</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-image:url(./picture/debug_mode/右.png);
+    border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0);
+}
+QPushButton:hover {
+	background-color: rgba(255, 0, 0, 100);
+}
+
+QPushButton:pressed{
+	background-color: rgba(0, 100, 100, 100);
+}
+
+
+
+
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>50</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_right_arm_forword">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>80</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-image:url(./picture/debug_mode/前.png);
+    border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0);
+}
+QPushButton:hover {
+	background-color: rgba(255, 0, 0, 100);
+}
+
+QPushButton:pressed{
+	background-color: rgba(0, 100, 100, 100);
+}
+
+
+
+
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>50</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_right_arm_backward">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>220</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-image:url(./picture/debug_mode/后.png);
+    border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0);
+}
+QPushButton:hover {
+	background-color: rgba(255, 0, 0, 100);
+}
+
+QPushButton:pressed{
+	background-color: rgba(0, 100, 100, 100);
+}
+
+
+
+
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>50</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_right_arm_up">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>70</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-image:url(./picture/debug_mode/上.png);
+    border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0);
+}
+QPushButton:hover {
+	background-color: rgba(255, 0, 0, 100);
+}
+
+QPushButton:pressed{
+	background-color: rgba(0, 100, 100, 100);
+}
+
+
+
+
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>50</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_right_arm_down">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>230</y>
+      <width>100</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	background-image:url(./picture/debug_mode/下.png);
+    border-radius: 20px;
+	background-color: rgba(255, 255, 255, 0);
+}
+QPushButton:hover {
+	background-color: rgba(255, 0, 0, 100);
+}
+
+QPushButton:pressed{
+	background-color: rgba(0, 100, 100, 100);
+}
+
+
+
+
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="autoRepeat">
+     <bool>true</bool>
+    </property>
+    <property name="autoRepeatInterval">
+     <number>50</number>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_right_break_open">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>710</y>
+      <width>150</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	font: 9pt &quot;微软雅黑&quot;;
+    border-radius: 20px;
+	background-color: rgba(100, 200, 50, 100);
+}
+QPushButton:hover {
+	background-color: rgba(255, 0, 0, 100);
+}
+
+QPushButton:pressed{
+	background-color: rgba(0, 100, 100, 100);
+}
+
+
+
+
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>打开抱闸</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_right_connect">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>710</y>
+      <width>150</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	font: 9pt &quot;微软雅黑&quot;;
+    border-radius: 20px;
+	background-color: rgba(100, 200, 50, 100);
+}
+QPushButton:hover {
+	background-color: rgba(255, 0, 0, 100);
+}
+
+QPushButton:pressed{
+	background-color: rgba(0, 100, 100, 100);
+}
+
+
+
+
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>连接网络</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_right_disconnect">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>760</y>
+      <width>150</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	font: 9pt &quot;微软雅黑&quot;;
+    border-radius: 20px;
+	background-color: rgba(100, 200, 50, 100);
+}
+QPushButton:hover {
+	background-color: rgba(255, 0, 0, 100);
+}
+
+QPushButton:pressed{
+	background-color: rgba(0, 100, 100, 100);
+}
+
+
+
+
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>断开网络</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_right_break_close">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>760</y>
+      <width>150</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	font: 9pt &quot;微软雅黑&quot;;
+    border-radius: 20px;
+	background-color: rgba(100, 200, 50, 100);
+}
+QPushButton:hover {
+	background-color: rgba(255, 0, 0, 100);
+}
+
+QPushButton:pressed{
+	background-color: rgba(0, 100, 100, 100);
+}
+
+
+
+
+
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>关闭抱闸</string>
+    </property>
    </widget>
    <widget class="QWidget" name="layoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>230</x>
-      <y>50</y>
-      <width>211</width>
+      <x>30</x>
+      <y>390</y>
+      <width>351</width>
       <height>308</height>
      </rect>
     </property>
@@ -1791,6 +1968,12 @@ QLabel
          </property>
          <property name="text">
           <string>&lt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
          </property>
         </widget>
        </item>
@@ -1836,6 +2019,12 @@ QLabel
          <property name="text">
           <string>&gt;</string>
          </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
         </widget>
        </item>
       </layout>
@@ -1858,6 +2047,12 @@ QLabel
          </property>
          <property name="text">
           <string>&lt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
          </property>
         </widget>
        </item>
@@ -1903,6 +2098,12 @@ QLabel
          <property name="text">
           <string>&gt;</string>
          </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
         </widget>
        </item>
       </layout>
@@ -1925,6 +2126,12 @@ QLabel
          </property>
          <property name="text">
           <string>&lt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
          </property>
         </widget>
        </item>
@@ -1970,6 +2177,12 @@ QLabel
          <property name="text">
           <string>&gt;</string>
          </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
         </widget>
        </item>
       </layout>
@@ -1992,6 +2205,12 @@ QLabel
          </property>
          <property name="text">
           <string>&lt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
          </property>
         </widget>
        </item>
@@ -2037,6 +2256,12 @@ QLabel
          <property name="text">
           <string>&gt;</string>
          </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
         </widget>
        </item>
       </layout>
@@ -2059,6 +2284,12 @@ QLabel
          </property>
          <property name="text">
           <string>&lt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
          </property>
         </widget>
        </item>
@@ -2104,6 +2335,12 @@ QLabel
          <property name="text">
           <string>&gt;</string>
          </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
         </widget>
        </item>
       </layout>
@@ -2126,6 +2363,12 @@ QLabel
          </property>
          <property name="text">
           <string>&lt;</string>
+         </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
          </property>
         </widget>
        </item>
@@ -2171,45 +2414,79 @@ QLabel
          <property name="text">
           <string>&gt;</string>
          </property>
+         <property name="autoRepeat">
+          <bool>true</bool>
+         </property>
+         <property name="autoRepeatInterval">
+          <number>50</number>
+         </property>
         </widget>
        </item>
       </layout>
      </item>
     </layout>
    </widget>
-  </widget>
-  <widget class="QPushButton" name="btn_stop">
-   <property name="geometry">
-    <rect>
-     <x>340</x>
-     <y>740</y>
-     <width>301</width>
-     <height>121</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton
-{
-	font: 25 14pt '微软雅黑 Light';
-	color: rgb(255,255,255);
-	background-color: rgb(20,196,188);
-	
-	background-color: rgb(255, 0, 0);
-    border: none;border-radius:15px;
-}
-QPushButton:hover
-{
-background-color: rgb(22,218,208);
-}
-
-QPushButton:pressed
-{
-	background-color: rgb(17,171,164);
-}</string>
-   </property>
-   <property name="text">
-    <string>停止</string>
-   </property>
+   <widget class="QSlider" name="right_direction_slider">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>40</y>
+      <width>271</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QSlider" name="right_angle_slider">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>340</y>
+      <width>261</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>30</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="right_direction_value">
+    <property name="geometry">
+     <rect>
+      <x>300</x>
+      <y>30</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="right_angle_value">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>330</y>
+      <width>71</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
